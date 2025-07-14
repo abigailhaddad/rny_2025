@@ -1,0 +1,435 @@
+---
+title: "Processing Document Collections with LLMs: A Practical Workflow"
+author: "Abigail Haddad"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    preview-links: auto
+    transition: slide
+    transition-speed: fast
+    html-math-method: katex
+    include-in-header: 
+      - text: |
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+---
+
+# Part 1: A Deadline {.section-header}
+
+## 35,000 Comments, One Question
+
+**Support or Oppose?**
+
+![](images/hourglass.png){fig-align="center" width="200"}
+
+**Deadline: [SOON]{.highlight}**
+
+::: {.notes}
+Building a tool to analyze public comments on Schedule F.
+Need to know: do they support or oppose?
+Comment period closing soon.
+:::
+
+---
+
+## The Manual Alternative
+
+**35,000 comments × 2 minutes each**
+
+= [1,167 hours]{.emphasis}
+
+= [29 work weeks]{.highlight}
+
+= **7 months**
+
+::: {.notes}
+Reading and categorizing manually wasn't an option.
+We needed automation.
+:::
+
+---
+
+## My Usual Blocks
+
+![](images/my usual blocks.png){fig-align="center" width="600"}
+
+::: {.notes}
+I'd built document processing tools before. 
+PyPDF2 for PDFs, python-docx for Word docs.
+Simple, reliable blocks that worked great.
+:::
+
+---
+
+## The Weird Stuff
+
+::: {style="text-align: center; margin-top: 20%"}
+**Dark scanned PDFs**
+
+**Random meme attachments** 
+
+**Blurry photos of handwritten notes**
+:::
+
+::: {.notes}
+But this time, some attachments were weird.
+My usual blocks were failing.
+:::
+
+---
+
+## A Different Block
+
+![](images/ocr.png){fig-align="center" width="700"}
+
+::: {.notes}
+So I added new blocks. OCR for images.
+But that spit out gibberish sometimes.
+:::
+
+---
+
+## The Breaking Point
+
+```
+Þ¿½¾ñ╠╧◄♦
+```
+
+**Is this... text?**
+
+::: {.notes}
+This is what I was staring at.
+While the deadline approached.
+:::
+
+---
+
+## So I Built a Gibberish Detector
+
+![](images/gibberish detector blocks.png){fig-align="center" width="700"}
+
+::: {.notes}
+Now I'm debugging my gibberish detector...
+:::
+
+---
+
+## Now I'm Debugging My Gibberish Detector
+
+::: {.notes}
+The complexity was spiraling out of control.
+:::
+
+---
+
+## Finally...
+
+```python
+if extraction_fails(doc):
+    result = gemini.process(doc)
+```
+
+::: {.notes}
+Finally said fuck it. Let me try Gemini on everything that fails.
+It's multimodal, let's see how it does.
+:::
+
+---
+
+## Gemini Cost Me
+
+![](images/seven cents.png){fig-align="center" width="600"}
+
+::: {.notes}
+Seven cents. That's what it cost.
+:::
+
+---
+
+## The Result
+
+✅ **35,000 comments processed**
+
+🚀 **Website live in days**
+
+**Two blocks deleted:** [~~OCR~~]{style="color: red; text-decoration: line-through"}    [~~Gibberish Detector~~]{style="color: red; text-decoration: line-through"}
+
+::: {.notes}
+Seven cents. That's what it cost.
+When those comments dropped, I was ready.
+:::
+
+# Part 2: The Pattern {.section-header}
+
+## Every Organization Has These
+
+🏥 Stacks of medical records
+
+👤 Piles of resumes
+
+💬 Endless customer complaints
+
+⚠️ Streams of error logs
+
+📄 Mountains of contracts
+
+::: {.notes}
+Every organization has document stacks.
+Similar documents that need the same questions answered.
+The time to process them blocks valuable insights.
+:::
+
+---
+
+## Same Questions About Each Document
+
+**"Is this fraudulent?"**
+
+**"Should we interview them?"**
+
+**"What's the main complaint?"**
+
+**"What caused the error?"**
+
+**"What's the risk?"**
+
+::: {.fragment style="margin-top: 2em"}
+[**Time is the barrier to insights**]{.highlight style="color: #f59e0b"}
+:::
+
+::: {.notes}
+The same questions, asked about each document.
+Currently done manually. Could be automated.
+:::
+
+---
+
+## Workflow: Get, Process, Do
+
+![](images/get process do blocks.png){fig-align="center" width="800"}
+
+::: {.notes}
+Every text processing pipeline follows this pattern.
+Get text, process it, do something with results.
+:::
+
+---
+
+## The Three Steps
+
+**GET**: Pull text from PDFs, Word docs, APIs, or user input
+
+**PROCESS**: Use LLMs, regex, BERT, or other tools to extract meaning
+
+**DO**: Create visualizations, populate templates, or trigger actions
+
+::: {.notes}
+Each step has its own tools and challenges.
+But the pattern remains constant.
+:::
+
+# Part 3: Making Decisions {.section-header}
+
+## Choosing Your Tools
+
+::: {.incremental}
+- How do you need it to fail?
+- Can data leave your environment?
+- Need transparency & control?
+- One-time or ongoing?
+:::
+
+::: {.notes}
+These factors determine whether to use LLMs or traditional tools.
+It's not about which is "better" - it's about your constraints.
+:::
+
+---
+
+## Should I Throw It Into an LLM?
+
+::: {.fragment style="font-size: 4em; color: #f59e0b; text-align: center; margin-top: 25%"}
+**MAYBE!!!**
+:::
+
+::: {.notes}
+It's not a yes or no question.
+It depends on your specific constraints and requirements.
+:::
+
+---
+
+## LLMs Work Well When...
+
+::: {.incremental}
+- [Accurate enough]{.emphasis} for your use case
+- You have compute/budget for it
+- Perfect legibility not required
+- You control the model (or it's OK if it changes)
+:::
+
+::: {.notes}
+LLMs aren't always the answer.
+But when they are, they're magic.
+:::
+
+---
+
+## Alternative Tools
+
+**Rule-based**
+- Examples: Regex, keyword matching, templates
+- Advantages: [Deterministic, fast, explainable]{.emphasis}
+
+**Smaller models**  
+- Examples: BERT, language detection, translation
+- Advantages: [Run locally, less compute]{.emphasis}, predictable
+
+[*Hybrid approaches can be the best*]{.highlight}
+
+::: {.notes}
+Don't default to LLMs. Sometimes simpler is better.
+Often you want both - rules to catch the obvious, LLMs for the rest.
+:::
+
+# Part 4: Real World Lessons {.section-header}
+
+## Scale Changes Everything
+
+**As we scale up...**
+
+- Handle failures gracefully
+- Parallelize operations  
+- Track state properly
+- Use real databases
+
+::: {.notes}
+What works for hundreds breaks at thousands.
+Schedule F taught me this the hard way.
+:::
+
+---
+
+## Schemas Become Contracts
+
+When working with others:
+
+- Field names [can't change]{.emphasis}
+- Data types matter  
+- Validation is [essential]{.emphasis}
+- Document everything
+
+::: {.notes}
+When someone else is building the frontend, 
+the schema becomes a contract. Change it, break everything.
+:::
+
+---
+
+## The Infrastructure Tax
+
+::: {.columns}
+::: {.column width="50%"}
+Each [new requirement]{.emphasis} adds complexity:
+
+- Resume from failures → State tracking
+- Scale up → Real database  
+- Team collaboration → Schema validation
+- Production ready → Monitoring & logging
+:::
+
+::: {.column width="50%"}
+![](images/resume validate etc blocks.png){fig-align="center"}
+:::
+:::
+
+::: {.notes}
+Every new requirement demands specialized pieces.
+Some you'll only need once.
+:::
+
+# Part 5: Getting Started & Building Right {.section-header}
+
+## Start Simple
+
+**The pattern stays the same:**
+
+![](images/get process do blocks.png){fig-align="center" width="600"}
+
+**Build only the blocks you need**
+
+[Start with the simplest solution that works]{.highlight}
+
+::: {.notes}
+Every pipeline follows the same pattern.
+But each new surprise means more blocks.
+Start simple. Add only what you need.
+:::
+
+---
+
+## Evaluate Your Pipeline Systematically
+
+- Create test cases early
+- Include weird examples  
+- Test edge cases
+- Ask: ["What keeps me up at night?"]{.highlight}
+
+::: {.notes}
+From "What To Ask Your Engineers" - evaluation is critical.
+Test on edge cases. Your weird data is someone's normal.
+Work with your engineers to define success.
+:::
+
+---
+
+## Make Iteration Painless
+
+Abstract your processing layer:
+
+- Swap models without changing code
+- Test multiple prompts in parallel
+- Compare results side-by-side
+- Grid search across configurations
+
+[**One test suite, many experiments**]{.highlight}
+
+::: {.notes}
+Build your pipeline so you can easily test different models and prompts.
+Abstract the LLM calls so you can iterate quickly.
+:::
+
+---
+
+## The Next Challenge
+
+New comments. Different source.
+
+[Another 7 months?]{.emphasis}
+
+::: {.fragment style="margin-top: 2em"}
+**No. I abstracted it.**
+
+[Hours, not months.]{.highlight}
+:::
+
+::: {.notes}
+The real power comes from abstraction.
+Build once, reuse everywhere.
+Time is no longer the barrier.
+:::
+
+---
+
+## Questions?
+
+::: {style="font-size: 1.2em; line-height: 2.5"}
+🔗 [github.com/abigailhaddad](https://github.com/abigailhaddad)
+
+📝 [presentofcoding.substack.com](https://presentofcoding.substack.com)
+:::
+
+::: {.notes}
+Remember: Start simple. Add blocks as needed.
+Every organization has document stacks waiting to be processed.
+:::

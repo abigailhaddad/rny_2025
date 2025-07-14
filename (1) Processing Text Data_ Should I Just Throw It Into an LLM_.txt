@@ -1,0 +1,171 @@
+
+--- Page 1 ---
+Processing Text Data: Should I Just Throw It Int
+an LLM?
+FEB 28, 2025
+Share
+The o ther day, I had to parse the m essiest text data I've ever seen. It w as like
+Frankenstein's D ata M onster: e ach system it w ent through before getting to m e
+stitched on its own m ismatched parts and bizarre appendages. T he original fields I
+needed to extract w ere in there somewhere, b ut I had to carefully remove all these
+grafted-on pieces first in order to find them.
+It took m e a couple of hours bu t I got m ost of the w ay there. I used m ultiple Python
+packages for processing markup languages, p lus regular expressions to clean up
+leftover tags and characters. It wasn't perfect, b ut it got m e the core fields I needed
+and I can get the additional fields if necessary.
+Thanks for reading The Present of Coding!
+Subscribe for free to receive new posts and
+support my work.
+But w hy didn't I just throw it into an LLM ? Surely, a n LLM  w ith instructions about
+what fields to extract w ould have been able to do it? W hy bother with single-purpose to
+for text processing when there’s an increasingly cheap and capable LLM  Swiss Army knife t
+promises to cut throug h any problem?
+I have re asons! In this post, I'll discuss the factors that go into m y decision about
+whether to use an LLM  for data processing tasks like cleaning text, c lassification, oABIGAIL HADDAD
+37/14/25, 1:01 PM (1) Processing Text Data: Should I Just Throw It Into an LLM?
+https://presentofcoding.substack.com/p/processing-text-data-should-i-just 1/9
+--- Page 2 ---
+Named Entity Recognition, w here there are also non-L LM  options.
+Thes e factors are:
+Accuracy: How accurate does my solution need to be? How does each method perform
+both in terms of how often it fails and how it fails?
+Transp arency: How muc h do I need to un derstand what my model is doing and why?
+Can I predict the output given an input? How important is it that the process be
+deterministic—t hat given the same input, I'll always get the same output?
+Compute/Budget/Privacy: Do I have enoug h compute? Can I send data to an extern
+API, and if so, what's my bud get?
+One-Time vs. O ngoing: Am I processing one dataset that exists already and is fully
+visible to me, or does this need to handle future data on systems I won't directly observ
+How accurate does my solution need to be? How does each method perform both in terms o
+how often it fails and how it fails?
+Accuracy7/14/25, 1:01 PM (1) Processing Text Data: Should I Just Throw It Into an LLM?
+https://presentofcoding.substack.com/p/processing-text-data-should-i-just 2/9
+--- Page 3 ---
+Different problems have different acceptable levels of accuracy and w ays it’s ok for
+them to fail.
+And  there aren't great heuristics for w hen an LLM  w ill outperform other approache
+—f or instance, for some classification problems other m ethods w ill do quite w ell, a
+for others they w on’t.
+After you’ve decided w hat to try, h ow do you determine relative accuracy rates for e
+method? For m y text cleaning process, I w as able to get to a w orking solution quick
+enough that I didn’t bother trying out anything else. I also didn't build tests because
+could eyeball that it w as w orking—w hich w as good enough for a proof of concept.
+But w hen I need to compare solutions in areas w here I can't immediately tell how w
+each of them is w orking, I w rite tests (n ot in a formal unit test framework) and  then
+evaluate how different m ethods perform. An d even if I’m definitely using an LLM , I
+need this testing process anyway, b ecause I'll test different m odels, p rompts, a nd
+parameters like token count or temperature, a nd I w ant that to be simple and
+automated.
+How muc h do I need to un derstand what my model is doing and why? Can I predict the out
+given an input? How important is it that the process be deterministic—t hat given the same
+input, I'll always get the same output?
+Thes e issues—t ransparency, e xplainability, d eterminism—a re distinct but overlapp
+Some m ethods are easily understandable, p redictable, a nd deterministic—l ike a
+regular expression that finds specific text patterns. S ome m ethods are none of these
+proprietary LLM , for instance— though for a specific use case, it m ight be essential
+deterministic, and  you can test this.Transparency7/14/25, 1:01 PM (1) Processing Text Data: Should I Just Throw It Into an LLM?
+https://presentofcoding.substack.com/p/processing-text-data-should-i-just 3/9
+--- Page 4 ---
+Other m ethods have some properties but not others: BERT, a s maller language m od
+is deterministic, bu t I w on't understand its behavior like I w ould regular expression
+there's no single, e xplainable pattern it's finding. C an I predict w hat m y BERT m od
+will output based on previous performance better than I can predict an LLM ? It
+depends on m y problem.
+One re ason to care about these factors: the better handle I have on how m y m odel
+works, the better I can predict w hat kinds of new data w ill break m y tools and how
+they w ill bre ak.
+For instance, in m y text processing example, a n LLM  w ould likely be m ore flexible t
+format changes than w hat I actually w ound up building: if m y data starts going
+through a totally different system, a nd no one tells m e, m y current solution isn't goi
+to handle it w ell. Bu t if data format changes break m y current m ethod, the failure w
+be obv ious: the fields simply stop coming through! I can easily w rite tests to detect
+this. W ith less transparent m ethods, I m ight not know w hen or how they'll fail,
+because there could still be something that looks like correct output.
+Regular expressions can identify text patterns like addresses and phone numbers
+7/14/25, 1:01 PM (1) Processing Text Data: Should I Just Throw It Into an LLM?
+https://presentofcoding.substack.com/p/processing-text-data-should-i-just 4/9
+--- Page 5 ---
+I m ight also care about transparency and related factors because they're inherently
+important to m y use case.
+Do I have enoug h compute? Can I send data to an external API, and if so, what's my budge
+If m y data can't leave m y environment due to privacy or regulatory concerns, I'm
+limited to tools I can ru n in that environment—w hich m ay rule out proprietary LLM
+or even larger open-source m odels. B ecause of this, for local processing, I lean towa
+non-L LM  solutions w hen possible. I can ru n some m odels via Ollama, bu t except fo
+small m odels w ith low volume, it takes time. I try to parallelize w ork so I'm  not
+waiting for code to ru n, bu t longer processing times inevitably slow m e down w hen
+developing.
+By contrast, for data that can be sent externally and use cases w here I m ight w ant a
+LLM , I frequently try the gpt-4o -m ini m odel before trying anything else, b ecause it
+incredibly cheap and surprisingly capable.Compute/Budget/Privacy7/14/25, 1:01 PM (1) Processing Text Data: Should I Just Throw It Into an LLM?
+https://presentofcoding.substack.com/p/processing-text-data-should-i-just 5/9
+--- Page 6 ---
+There’s huge price variation by model with OpenAI
+For m y text processing problem, p rivacy and compute needs w ere a factor—a nd m y
+regular expression/Python solution ru ns locally, a lmost instantly, a nd costs nothing
+per ru n. An lo cal LLM  approach w ould have been m uch m ore resource-intensive.
+Am I processing one dataset that exists already and is fully visible to me, or does this need t
+handle future data on systems I won't directly observe?
+For one-time analysis, the only kind of accuracy I care about is accuracy on the data
+that’s actua lly in front of me. F or ongoing systems that are designed to w ork w ithout
+constant human rev iew, I have to think about how the data could change and how m
+methods w ould res pond.
+Th is is rel ated to the issues I m entioned earlier around how each m ethod w ill break
+For instance, if incoming data changes break m y re gular expressions, the m ost likel
+One-Time vs. Ongoing7/14/25, 1:01 PM (1) Processing Text Data: Should I Just Throw It Into an LLM?
+https://presentofcoding.substack.com/p/processing-text-data-should-i-just 6/9
+--- Page 7 ---
+outcome is empty fields and a bro ken pipeline—a n obvious failure. B ut w ith an LLM
+I've added a m odel to m y pipeline that can fail silently as data changes.
+External LLM  services also carry dependency ri sks: AP I endpoints change, p ricing
+models shift, and  m odels get deprecated.
+Thes e factors don't m ean never using LLM s in ongoing systems—s ometimes they'r
+the only viable solution. Bu t they do create trade-offs that should push m e toward n
+LLM  solutions w hen possible, and toward robust m onitoring approaches w hen not.
+Circling back to m y original problem, I didn't throw m y w eirdly-formatted text data
+into an LLM  because:
+I got a good solution w ithout it
+I know exactly how m y solution w orks and I have a good sense of w hen and how
+will fail
+It uses m inimal compute and has no ongoing costs
+It's a solution I'm  comfortable maintaining long-term.
+A c ore issue in m y decision-m aking is that adding an LLM  step m eans adding anoth
+machine learning m odel to m y project— one that's opaque and likely non-
+deterministic.
+If I can easily check w hether it's w orking, then this m ay not m atter m uch.
+But if I can't easily spot failures, o r if it's going into an ongoing process w here I w o
+regularly check outputs, I need to decide if I'm  re ady for ongoing m odel m onitoring
+and m aintenance, the same as I w ould for any other m achine learning m odel. T hisWhy I Didn't Use an LLM for My Messy Text Dat
+LLMs: Powerful Tools, Not Universal Solutions7/14/25, 1:01 PM (1) Processing Text Data: Should I Just Throw It Into an LLM?
+https://presentofcoding.substack.com/p/processing-text-data-should-i-just 7/9
+--- Page 8 ---
+concern increases if I'm  using an external m odel that could change or disappear
+entirely.
+So if I take this ro ute, I should think carefully about ongoing testing and m aintenan
+For m y use case, h alf of the testing is easy: I should w rite tests to check w hether all
+characters in the LLM  res ponse appear in m y original field and in the correct order
+because the LLM  is just supposed to remove characters, n ot add any. T his addresse
+the "did it m ake stuff up" question. B ut the "did it drop important stuff" question is
+harder, and  for lots of other tasks I could have an LLM  do, o ngoing evaluation w oul
+be m uch m ore complicated.
+LLM s are powerful tools, bu t that doesn't m ean they’re the ri ght solution for every
+task. Bu t the calculus can also shift as newer m odels have better performance, lowe
+compute req uirements, and  lower prices. S ix m onths from now, I m ight m ake differ
+decisions for some problems as the capabilities/cost tradeoff continues to evolve. T h
+important thing is having a framework to evaluate these decisions—t hat is, k nowin
+what’s important in each use case—a nd having an approach that’s suffi ciently test-
+driven and m odular that you’re able swap in new m ethods as appropriate.
+Got a project involving un struc tured text or image data you'd like help with? I'm  available f
+part-time consulting and coding. You can reach me at abigail.haddad at gmail.
+Thanks for reading The Present of Coding!
+Subscribe for free to receive new posts and
+support my work.
+3 Likes
+7/14/25, 1:01 PM (1) Processing Text Data: Should I Just Throw It Into an LLM?
+https://presentofcoding.substack.com/p/processing-text-data-should-i-just 8/9
+--- Page 9 ---
+Discussion about this post
+Write a comment...
+© 2025Abigail Haddad ∙ Privacy ∙ Terms ∙ Collection notice
+Substackis the home for great cultureCommentsRestacks7/14/25, 1:01 PM (1) Processing Text Data: Should I Just Throw It Into an LLM?
+https://presentofcoding.substack.com/p/processing-text-data-should-i-just 9/9

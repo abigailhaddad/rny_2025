@@ -1,0 +1,133 @@
+
+--- Page 1 ---
+What To Ask Your Engineers
+Evaluating AI for Less-Technical Stakeholders
+APR 23, 2025
+Share
+W hen I'm  prototyping a m odel, m y goal is to share information that’s useful to
+decision-m akers. Th at m eans figuring out not just w hat I know, bu t w hat they need 
+know—and  how to present it in a w ay that w orks for them. W ithout clear direction,
+though, I’m often guessing. I know the m odel better than anyone—t hat’s m y job—b
+I’m not the expert in the re al-w orld problem w e’re trying to solve w ith it.
+Th at dynamic is typical: y our data scientist or engineer hopefully knows the m odel
+inside and out, bu t they m ay not understand the broader context or constraints you’
+working w ithin.
+Thanks for reading The Present of Coding!
+Subscribe for free to receive new posts and
+support my work.ABIGAIL HADDAD
+37/14/25, 1:01 PM (1) What To Ask Your Engineers - by Abigail Haddad
+https://presentofcoding.substack.com/p/what-to-ask-your-engineers 1/8
+--- Page 2 ---
+Th is is about how to have a conversation w ith that person and w hat to ask for so th
+you can be better-informed w hen deciding w hether this m odel is good enough to us
+whether it needs to be tweaked, o r w hether it's just not going to w ork unless it can 
+significantly improved.
+W hen I'm  talking about a m odel, I m ean anything from a linear regression m odel to
+chatbot. Bu t for this post, let's imagine I've built a text classification m odel that
+processes m essages during disasters to flag m essages requiring immediate response
+Let's say w e're g etting these m essages from various sources, c onstantly, a nd w e w an
+to see if w e can automate classifying them as either “urgent" or "we can look at this
+later."
+The co mmunications fla gged as "urgent" get immediate human attention, w hile the
+others w ill be looked at w hen someone has time for them.
+The Example: Emergency Communications
+Model7/14/25, 1:01 PM (1) What To Ask Your Engineers - by Abigail Haddad
+https://presentofcoding.substack.com/p/what-to-ask-your-engineers 2/8
+--- Page 3 ---
+Currently, y our organization is doing all of this by hand, w hich m eans someone is
+spending a lot of time sorting these m essages instead of actually responding! W e're
+exploring w hether w e can create a m odel that's good enough to replace some or all 
+this triage process.
+Your engineer w ants to get you the information you need to m ake a decision. H ow d
+you figure out w hat to ask for?
+Here are the s trategies I rec ommend to help you answer that question.
+W hen considering ri sk, as k yourself: w hat keeps you up at night?
+In this case, g etting some of these ri ght could actually be the difference between lif
+and death. Bu t w hen that's not the case, I bet there are still outcomes you're especia
+concerned about. W hat could go w rong that w ould lose your organization a lot of
+money, o r w here your leadership w ould be getting pulled away from their normal w
+to answer for your m odel, o r w here someone could successfully sue you?
+In this specific context, ri sks could include:
+Strategy 1: Think About Risk7/14/25, 1:01 PM (1) What To Ask Your Engineers - by Abigail Haddad
+https://presentofcoding.substack.com/p/what-to-ask-your-engineers 3/8
+--- Page 4 ---
+The m odel m isses too m any urgent m essages overall
+It sometimes m isses a certain re ally urgent category w hich w e can't afford to ev
+miss
+It systematically performs poorly on certain types of m essages, like those in oth
+languages
+It's inconsistent (or "non-deterministic") a nd gives different outputs for the sam
+input, and  w e need that not to happen.
+Your engineer w ill have ideas, bu t ultimately you are the one w ho is going to have t
+figure out w hat those keep-you-up-at-n ight scenarios are.
+The re ality is that no m odel performs perfectly–a nd if someone says it does, if you'r
+ever looking at something that's claiming 99.9% a ccuracy, b e skeptical. S o the quest
+isn't "can w e bu ild a perfect m odel?" but rather "which errors can w e tolerate, a nd
+which ones w ould be catastrophic?"
+No w that w e've identified the risks w e're concerned about, w e're going to take them
+into the second strategy: g et bro ad and specific.
+Th is m eans translating your concerns into m etrics w e can track.
+Broad m etrics you should almost always ask for w hen you have this type of m odel—
+and w hich your engineer w ill probably automatically give you—i nclude:
+Precision: If w e fla g something as urgent, w hat's the chance it's actually urgent
+(Or: ho w m any false alarms w ill I get?)
+Recall: W hat percentage of truly urgent things are w e catching? (Or: h ow m any
+emergencies are w e m issing?)Strategy 2: Get Both Broad AND Specific7/14/25, 1:01 PM (1) What To Ask Your Engineers - by Abigail Haddad
+https://presentofcoding.substack.com/p/what-to-ask-your-engineers 4/8
+--- Page 5 ---
+There m ay be other important 'b road' o nes depending on your risks. F or instance, a
+model that performs w ell overall but terribly on non-E nglish m essages m ight not be
+acceptable in your context, so you m ight also track performance by language.
+Depending on the res ults, y ou m ight test out using m achine translation prior to
+sending m essages to your m odel, o r if that doesn't w ork w ell, always have a person
+read through the non-E nglish ones soon after they’re received.
+Include specific test cases that are important to you and w here you know w hat the
+expected output should be. F or thoroughness, include test cases that w eren't used b
+the engineering team during development or testing.
+Specific test cases can uncover problems that overall statistics m ight m iss—a nd tha
+your engineers m ight not know are particularly important.
+You can either test these yourself if you have access to the m odel or ask your engine
+to test and rep ort back.
+Your engineers can create a test interface for you to try specific examples
+Strategy 3: Ask for Automation7/14/25, 1:01 PM (1) What To Ask Your Engineers - by Abigail Haddad
+https://presentofcoding.substack.com/p/what-to-ask-your-engineers 5/8
+--- Page 6 ---
+Finally, o nce you know your ri sks and you've got the m etrics, y ou'll w ant to ask for
+automation so you can get reg ular reporting on w hat m atters to you.
+In addition to the above m etrics, o nce this is in production, that m ight include:
+Volume of incoming data – ho w m uch processing it's doing
+Examples of low-confidence predictions, if your m odel outputs confidence scor
+Examples of m odel errors
+This is part of an automated report visualization I built
+For tracking m odel errors, y ou have an advantage w hen human review is part of you
+process: these interactions naturally generate labeled, g round-truth data that can be
+sent back to your engineering team. H owever, if your system doesn't include autom
+labeling, d eliberately add this step to your w orkflow w ith at least some of your new
+data. Th is ensures you can continuously validate your m odel and retrain w hen
+performance falls.
+And  by  automating this m onitoring, y ou get re gular re ports w ithout creating
+additional w ork for your team.
+7/14/25, 1:01 PM (1) What To Ask Your Engineers - by Abigail Haddad
+https://presentofcoding.substack.com/p/what-to-ask-your-engineers 6/8
+--- Page 7 ---
+The hardest part of evalua ting a model is making sure we’re solving the right problem in the
+first place.
+Your engineer w ants to bu ild something useful—b ut they need your help defining
+what “useful” actually m eans in your context.
+If you find yourself nodding along to m etrics w ithout asking the questions that m at
+to you, that m ight m ake the conversation smoother in the short-term—b ut it w on’t 
+either of you w hat you actually need.
+So: as k w hat could go w rong. S pell out w hat success looks like. M ake sure the
+evaluation you're g etting answers the questions that keep you up at night.
+Thanks for reading The Present of Coding!
+Subscribe for free to receive new posts and
+support my work.
+3 Likes
+Discussion about this postWhy To Have The Conversation
+CommentsRestacks7/14/25, 1:01 PM (1) What To Ask Your Engineers - by Abigail Haddad
+https://presentofcoding.substack.com/p/what-to-ask-your-engineers 7/8
+--- Page 8 ---
+Write a comment...
+© 2025Abigail Haddad ∙ Privacy ∙ Terms ∙ Collection notice
+Substackis the home for great culture7/14/25, 1:01 PM (1) What To Ask Your Engineers - by Abigail Haddad
+https://presentofcoding.substack.com/p/what-to-ask-your-engineers 8/8
