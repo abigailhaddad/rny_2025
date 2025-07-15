@@ -16,11 +16,9 @@ format:
 
 # Part 1: A Deadline {.section-header}
 
-## 35,000 Comments, One Question
+## 35,000 Public Comments to Analyze
 
-**Support or Oppose?**
-
-![](images/hourglass.png){fig-align="center" width="200"}
+![](images/hourglass.png){fig-align="left" width="200"}
 
 **Deadline: [SOON]{.highlight}**
 
@@ -30,22 +28,6 @@ Need to know: do they support or oppose?
 Comment period closing soon.
 :::
 
----
-
-## The Manual Alternative
-
-**35,000 comments × 2 minutes each**
-
-= [1,167 hours]{.emphasis}
-
-= [29 work weeks]{.highlight}
-
-= **7 months**
-
-::: {.notes}
-Reading and categorizing manually wasn't an option.
-We needed automation.
-:::
 
 ---
 
@@ -63,12 +45,20 @@ Simple, reliable blocks that worked great.
 
 ## The Weird Stuff
 
-::: {style="text-align: center; margin-top: 20%"}
+::: {.columns}
+::: {.column width="50%"}
+::: {style="margin-top: 20%"}
 **Dark scanned PDFs**
 
 **Random meme attachments** 
 
 **Blurry photos of handwritten notes**
+:::
+:::
+
+::: {.column width="50%"}
+![](images/meme.webp){fig-align="center"}
+:::
 :::
 
 ::: {.notes}
@@ -78,7 +68,7 @@ My usual blocks were failing.
 
 ---
 
-## A Different Block
+## I Added a New Block
 
 ![](images/ocr.png){fig-align="center" width="700"}
 
@@ -89,13 +79,9 @@ But that spit out gibberish sometimes.
 
 ---
 
-## The Breaking Point
+## I Occasionally Got Gibberish
 
-```
-Þ¿½¾ñ╠╧◄♦
-```
-
-**Is this... text?**
+![](images/is this text.png){fig-align="center" width="800"}
 
 ::: {.notes}
 This is what I was staring at.
@@ -116,13 +102,15 @@ Now I'm debugging my gibberish detector...
 
 ## Now I'm Debugging My Gibberish Detector
 
+![](images/debugging.png){fig-align="center" width="700"}
+
 ::: {.notes}
 The complexity was spiraling out of control.
 :::
 
 ---
 
-## Finally...
+## Finally, I Try Gemini To Extract Text...
 
 ```python
 if extraction_fails(doc):
@@ -132,6 +120,19 @@ if extraction_fails(doc):
 ::: {.notes}
 Finally said fuck it. Let me try Gemini on everything that fails.
 It's multimodal, let's see how it does.
+:::
+
+---
+
+## 
+
+::: {style="text-align: center; font-size: 5em; margin-top: 20%; color: #f59e0b; font-weight: 800"}
+It Works!! 🎉🎊🥳
+:::
+
+::: {.notes}
+It just... worked. All of it. The dark PDFs, the memes, the handwritten notes.
+Everything my complex pipeline couldn't handle.
 :::
 
 ---
@@ -152,6 +153,8 @@ Seven cents. That's what it cost.
 
 🚀 **Website live in days**
 
+⏰ **Avoided: months of manual work**
+
 **Two blocks deleted:** [~~OCR~~]{style="color: red; text-decoration: line-through"}    [~~Gibberish Detector~~]{style="color: red; text-decoration: line-through"}
 
 ::: {.notes}
@@ -159,7 +162,17 @@ Seven cents. That's what it cost.
 When those comments dropped, I was ready.
 :::
 
-# Part 2: The Pattern {.section-header}
+---
+
+## Here It Is
+
+![](images/comment_site.jpg){fig-align="center" width="800"}
+
+::: {.notes}
+The final website showing all 35,000 comments analyzed and searchable.
+:::
+
+# Part 2: The Text Data Pipeline {.section-header}
 
 ## Every Organization Has These
 
@@ -181,7 +194,7 @@ The time to process them blocks valuable insights.
 
 ---
 
-## Same Questions About Each Document
+## Not RAG: Same Questions Each Time
 
 **"Is this fraudulent?"**
 
@@ -194,7 +207,7 @@ The time to process them blocks valuable insights.
 **"What's the risk?"**
 
 ::: {.fragment style="margin-top: 2em"}
-[**Time is the barrier to insights**]{.highlight style="color: #f59e0b"}
+***Time Is The Barrier To Answering These***
 :::
 
 ::: {.notes}
@@ -204,47 +217,41 @@ Currently done manually. Could be automated.
 
 ---
 
-## Workflow: Get, Process, Do
+## The Answer? Document Processing Pipeline
 
-![](images/get process do blocks.png){fig-align="center" width="800"}
+![](images/pipeline.png){fig-align="center" width="700"}
+
 
 ::: {.notes}
-Every text processing pipeline follows this pattern.
-Get text, process it, do something with results.
+Every pipeline follows the same pattern.
+Understanding this pattern is key.
 :::
 
 ---
 
 ## The Three Steps
 
+::: {.columns}
+::: {.column width="40%"}
 **GET**: Pull text from PDFs, Word docs, APIs, or user input
 
 **PROCESS**: Use LLMs, regex, BERT, or other tools to extract meaning
 
 **DO**: Create visualizations, populate templates, or trigger actions
-
-::: {.notes}
-Each step has its own tools and challenges.
-But the pattern remains constant.
 :::
 
-# Part 3: Making Decisions {.section-header}
-
-## Choosing Your Tools
-
-::: {.incremental}
-- How do you need it to fail?
-- Can data leave your environment?
-- Need transparency & control?
-- One-time or ongoing?
+::: {.column width="60%"}
+![](images/get process do blocks.png){fig-align="center"}
+:::
 :::
 
 ::: {.notes}
-These factors determine whether to use LLMs or traditional tools.
-It's not about which is "better" - it's about your constraints.
+Every text processing pipeline follows this pattern.
+Get text, process it, do something with results.
 :::
 
----
+# Part 3: How to Get Started {.section-header}
+
 
 ## Should I Throw It Into an LLM?
 
@@ -270,7 +277,6 @@ It depends on your specific constraints and requirements.
 
 ::: {.notes}
 LLMs aren't always the answer.
-But when they are, they're magic.
 :::
 
 ---
@@ -278,12 +284,16 @@ But when they are, they're magic.
 ## Alternative Tools
 
 **Rule-based**
-- Examples: Regex, keyword matching, templates
-- Advantages: [Deterministic, fast, explainable]{.emphasis}
+
+Examples: Regex, keyword matching, templates
+
+Advantages: [Deterministic, fast, explainable]{.emphasis}
 
 **Smaller models**  
-- Examples: BERT, language detection, translation
-- Advantages: [Run locally, less compute]{.emphasis}, predictable
+
+Examples: BERT, language detection, translation
+
+Advantages: [Run locally, less compute]{.emphasis}, predictable
 
 [*Hybrid approaches can be the best*]{.highlight}
 
@@ -294,79 +304,131 @@ Often you want both - rules to catch the obvious, LLMs for the rest.
 
 # Part 4: Real World Lessons {.section-header}
 
-## Scale Changes Everything
+## You Can't Build All The Blocks
 
-**As we scale up...**
+![](images/too many blocks.png){fig-align="center" width="700"}
 
-- Handle failures gracefully
-- Parallelize operations  
-- Track state properly
-- Use real databases
+Each use case needs [different blocks]{.emphasis}
+
+What works for one project [won't work for the next]{.emphasis}
+
+::: {.notes}
+The blocks you need are specific to your problem.
+You'll always be building new ones.
+:::
+
+---
+
+## My Specific Lessons
+
+### As we scale up:
+
+✓ Handle failures gracefully
+
+✓ Parallelize operations  
+
+✓ Track state properly
+
+✓ Use real databases
 
 ::: {.notes}
 What works for hundreds breaks at thousands.
-Schedule F taught me this the hard way.
 :::
 
 ---
 
-## Schemas Become Contracts
-
-When working with others:
-
-- Field names [can't change]{.emphasis}
-- Data types matter  
-- Validation is [essential]{.emphasis}
-- Document everything
-
-::: {.notes}
-When someone else is building the frontend, 
-the schema becomes a contract. Change it, break everything.
-:::
-
----
-
-## The Infrastructure Tax
+## When Working With Others
 
 ::: {.columns}
 ::: {.column width="50%"}
-Each [new requirement]{.emphasis} adds complexity:
+### Schemas become contracts:
 
-- Resume from failures → State tracking
-- Scale up → Real database  
-- Team collaboration → Schema validation
-- Production ready → Monitoring & logging
+📋 Schemas become [contracts]{.emphasis}
+
+🔒 Field names and formats [can't just change]{.emphasis}
+
+✅ Validation is [essential]{.emphasis}
 :::
 
 ::: {.column width="50%"}
-![](images/resume validate etc blocks.png){fig-align="center"}
+![](images/schema.png){fig-align="center"}
 :::
 :::
 
 ::: {.notes}
-Every new requirement demands specialized pieces.
-Some you'll only need once.
-:::
-
-# Part 5: Getting Started & Building Right {.section-header}
-
-## Start Simple
-
-**The pattern stays the same:**
-
-![](images/get process do blocks.png){fig-align="center" width="600"}
-
-**Build only the blocks you need**
-
-[Start with the simplest solution that works]{.highlight}
-
-::: {.notes}
-Every pipeline follows the same pattern.
-But each new surprise means more blocks.
-Start simple. Add only what you need.
+When someone else builds the frontend, your schema becomes a contract.
 :::
 
 ---
+
+## Questions to Ask?
+
+::: {.columns}
+::: {.column width="45%"}
+::: {.fragment}
+**Can data leave your environment?**
+:::
+
+::: {.fragment style="margin-top: 1.5em"}
+**Need transparency?**
+:::
+
+::: {.fragment style="margin-top: 1.5em"}
+**One-time or ongoing?**
+:::
+
+::: {.fragment style="margin-top: 1.5em"}
+**How do you need it to fail?**
+:::
+:::
+
+::: {.column width="55%"}
+::: {.fragment}
+→ Local tools vs. cloud models
+:::
+
+::: {.fragment style="margin-top: 1.5em"}
+→ Explainable vs. black-box models
+:::
+
+::: {.fragment style="margin-top: 1.5em"}
+→ Monitoring needs for production systems
+:::
+
+::: {.fragment style="margin-top: 1.5em"}
+→ Silent failures vs. obvious failures
+:::
+:::
+:::
+
+::: {.notes}
+These are the key questions that determine your architecture choices.
+Each answer shapes what tools and approaches you can use.
+:::
+
+---
+
+## Remember My Seven Cents?
+
+**Gemini only worked because:**
+
+::: {.incremental}
+- ✓ Data could leave my environment
+- ✓ 35,000 documents, most with no attachments = small enough for the budget
+:::
+
+::: {.fragment style="margin-top: 2em"}
+[**Different constraints = Different solution**]{.emphasis}
+:::
+
+::: {.notes}
+The seven-cent solution wasn't magic. It worked because my constraints allowed it.
+Change any of those checkmarks to an X, and I'd need a totally different approach.
+:::
+
+---
+
+# Part 5: Evaluation {.section-header}
 
 ## Evaluate Your Pipeline Systematically
 
@@ -385,18 +447,63 @@ Work with your engineers to define success.
 
 ## Make Iteration Painless
 
-Abstract your processing layer:
+::: {.columns}
+::: {.column width="50%"}
+Build modularity into your processing layer:
 
 - Swap models without changing code
 - Test multiple prompts in parallel
 - Compare results side-by-side
 - Grid search across configurations
 
-[**One test suite, many experiments**]{.highlight}
+[**Modular design enables rapid experimentation**]{.highlight}
+:::
+
+::: {.column width="50%"}
+![](images/make iteration painless.png){fig-align="center"}
+:::
+:::
 
 ::: {.notes}
 Build your pipeline so you can easily test different models and prompts.
 Abstract the LLM calls so you can iterate quickly.
+:::
+
+## Don't Forget Monitoring
+
+**For production systems, you need a fourth step:**
+
+::: {.incremental}
+- **Natural labeling**: When you have ground truth later
+- **Strategic sampling**: Human review of edge cases
+- **Performance tracking**: Know when models drift
+- **Failure alerts**: Catch problems early
+:::
+
+::: {.fragment style="margin-top: 2em"}
+[**Production pipelines need ongoing care**]{.highlight}
+:::
+
+::: {.notes}
+The fourth step that everyone forgets.
+Especially important for LLMs that can fail silently.
+:::
+
+---
+
+# Part 6: Conclusion {.section-header}
+
+## Start Simple
+
+![](images/get process do blocks.png){fig-align="center" width="600"}
+
+**Build only the blocks you need**
+
+
+::: {.notes}
+Every pipeline follows the same pattern.
+But each new surprise means more blocks.
+Start simple. Add only what you need.
 :::
 
 ---
@@ -418,6 +525,9 @@ The real power comes from abstraction.
 Build once, reuse everywhere.
 Time is no longer the barrier.
 :::
+
+---
+
 
 ---
 

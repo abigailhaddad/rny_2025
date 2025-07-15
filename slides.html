@@ -210,33 +210,12 @@ Abigail Haddad
 <h1>Part 1: A Deadline</h1>
 
 </section>
-<section id="comments-one-question" class="slide level2">
-<h2>35,000 Comments, One Question</h2>
-<p><strong>Support or Oppose?</strong></p>
+<section id="public-comments-to-analyze" class="slide level2">
+<h2>35,000 Public Comments to Analyze</h2>
 
-<img data-src="images/hourglass.png" class="quarto-figure quarto-figure-center r-stretch" width="200"><p><strong>Deadline: <span class="highlight">SOON</span></strong></p>
+<img data-src="images/hourglass.png" class="quarto-figure quarto-figure-left r-stretch" width="200"><p><strong>Deadline: <span class="highlight">SOON</span></strong></p>
 <aside class="notes">
 <p>Building a tool to analyze public comments on Schedule F. Need to know: do they support or oppose? Comment period closing soon.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="the-manual-alternative" class="slide level2">
-<h2>The Manual Alternative</h2>
-<p><strong>35,000 comments × 2 minutes each</strong></p>
-<p>= <span class="emphasis">1,167 hours</span></p>
-<p>= <span class="highlight">29 work weeks</span></p>
-<p>= <strong>7 months</strong></p>
-<aside class="notes">
-<p>Reading and categorizing manually wasn’t an option. We needed automation.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -268,11 +247,20 @@ Abigail Haddad
 </section>
 <section id="the-weird-stuff" class="slide level2">
 <h2>The Weird Stuff</h2>
-<div style="text-align: center; margin-top: 20%">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="margin-top: 20%">
 <p><strong>Dark scanned PDFs</strong></p>
 <p><strong>Random meme attachments</strong></p>
 <p><strong>Blurry photos of handwritten notes</strong></p>
 </div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/meme.webp" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div></div>
 <aside class="notes">
 <p>But this time, some attachments were weird. My usual blocks were failing.</p>
 <style type="text/css">
@@ -287,8 +275,8 @@ Abigail Haddad
           display:block!important;
       }</style></aside>
 </section>
-<section id="a-different-block" class="slide level2">
-<h2>A Different Block</h2>
+<section id="i-added-a-new-block" class="slide level2">
+<h2>I Added a New Block</h2>
 
 <img data-src="images/ocr.png" class="quarto-figure quarto-figure-center r-stretch" width="700"><aside class="notes">
 <p>So I added new blocks. OCR for images. But that spit out gibberish sometimes.</p>
@@ -304,11 +292,10 @@ Abigail Haddad
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-breaking-point" class="slide level2">
-<h2>The Breaking Point</h2>
-<pre><code>Þ¿½¾ñ╠╧◄♦</code></pre>
-<p><strong>Is this… text?</strong></p>
-<aside class="notes">
+<section id="i-occasionally-got-gibberish" class="slide level2">
+<h2>I Occasionally Got Gibberish</h2>
+
+<img data-src="images/is%20this%20text.png" class="quarto-figure quarto-figure-center r-stretch" width="800"><aside class="notes">
 <p>This is what I was staring at. While the deadline approached.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -341,7 +328,8 @@ Abigail Haddad
 </section>
 <section id="now-im-debugging-my-gibberish-detector" class="slide level2">
 <h2>Now I’m Debugging My Gibberish Detector</h2>
-<aside class="notes">
+
+<img data-src="images/debugging.png" class="quarto-figure quarto-figure-center r-stretch" width="700"><aside class="notes">
 <p>The complexity was spiraling out of control.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -355,12 +343,31 @@ Abigail Haddad
           display:block!important;
       }</style></aside>
 </section>
-<section id="finally" class="slide level2">
-<h2>Finally…</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="cf">if</span> extraction_fails(doc):</span>
-<span id="cb2-2"><a href=""></a>    result <span class="op">=</span> gemini.process(doc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="finally-i-try-gemini-to-extract-text" class="slide level2">
+<h2>Finally, I Try Gemini To Extract Text…</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="cf">if</span> extraction_fails(doc):</span>
+<span id="cb1-2"><a href=""></a>    result <span class="op">=</span> gemini.process(doc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <p>Finally said fuck it. Let me try Gemini on everything that fails. It’s multimodal, let’s see how it does.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div style="text-align: center; font-size: 5em; margin-top: 20%; color: #f59e0b; font-weight: 800">
+<p>It Works!! 🎉🎊🥳</p>
+</div>
+<aside class="notes">
+<p>It just… worked. All of it. The dark PDFs, the memes, the handwritten notes. Everything my complex pipeline couldn’t handle.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -394,6 +401,7 @@ Abigail Haddad
 <h2>The Result</h2>
 <p>✅ <strong>35,000 comments processed</strong></p>
 <p>🚀 <strong>Website live in days</strong></p>
+<p>⏰ <strong>Avoided: months of manual work</strong></p>
 <p><strong>Two blocks deleted:</strong> <span style="color: red; text-decoration: line-through"><del>OCR</del></span> <span style="color: red; text-decoration: line-through"><del>Gibberish Detector</del></span></p>
 <aside class="notes">
 <p>Seven cents. That’s what it cost. When those comments dropped, I was ready.</p>
@@ -408,10 +416,27 @@ Abigail Haddad
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="here-it-is" class="slide level2">
+<h2>Here It Is</h2>
+
+<img data-src="images/comment_site.jpg" class="quarto-figure quarto-figure-center r-stretch" width="800"><aside class="notes">
+<p>The final website showing all 35,000 comments analyzed and searchable.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
-<section id="part-2-the-pattern" class="title-slide slide level1 section-header center">
-<h1>Part 2: The Pattern</h1>
+<section id="part-2-the-text-data-pipeline" class="title-slide slide level1 section-header center">
+<h1>Part 2: The Text Data Pipeline</h1>
 
 </section>
 <section id="every-organization-has-these" class="slide level2">
@@ -435,15 +460,15 @@ Abigail Haddad
           display:block!important;
       }</style></aside>
 </section>
-<section id="same-questions-about-each-document" class="slide level2">
-<h2>Same Questions About Each Document</h2>
+<section id="not-rag-same-questions-each-time" class="slide level2">
+<h2>Not RAG: Same Questions Each Time</h2>
 <p><strong>“Is this fraudulent?”</strong></p>
 <p><strong>“Should we interview them?”</strong></p>
 <p><strong>“What’s the main complaint?”</strong></p>
 <p><strong>“What caused the error?”</strong></p>
 <p><strong>“What’s the risk?”</strong></p>
 <div class="fragment" style="margin-top: 2em">
-<p><span class="highlight" style="color: #f59e0b"><strong>Time is the barrier to insights</strong></span></p>
+<p><strong><em>Time Is The Barrier To Answering These</em></strong></p>
 </div>
 <aside class="notes">
 <p>The same questions, asked about each document. Currently done manually. Could be automated.</p>
@@ -459,11 +484,11 @@ Abigail Haddad
           display:block!important;
       }</style></aside>
 </section>
-<section id="workflow-get-process-do" class="slide level2">
-<h2>Workflow: Get, Process, Do</h2>
+<section id="the-answer-document-processing-pipeline" class="slide level2">
+<h2>The Answer? Document Processing Pipeline</h2>
 
-<img data-src="images/get%20process%20do%20blocks.png" class="quarto-figure quarto-figure-center r-stretch" width="800"><aside class="notes">
-<p>Every text processing pipeline follows this pattern. Get text, process it, do something with results.</p>
+<img data-src="images/pipeline.png" class="quarto-figure quarto-figure-center r-stretch" width="700"><aside class="notes">
+<p>Every pipeline follows the same pattern. Understanding this pattern is key.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -478,11 +503,20 @@ Abigail Haddad
 </section>
 <section id="the-three-steps" class="slide level2">
 <h2>The Three Steps</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
 <p><strong>GET</strong>: Pull text from PDFs, Word docs, APIs, or user input</p>
 <p><strong>PROCESS</strong>: Use LLMs, regex, BERT, or other tools to extract meaning</p>
 <p><strong>DO</strong>: Create visualizations, populate templates, or trigger actions</p>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/get%20process%20do%20blocks.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div></div>
 <aside class="notes">
-<p>Each step has its own tools and challenges. But the pattern remains constant.</p>
+<p>Every text processing pipeline follows this pattern. Get text, process it, do something with results.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -496,31 +530,9 @@ Abigail Haddad
       }</style></aside>
 </section></section>
 <section>
-<section id="part-3-making-decisions" class="title-slide slide level1 section-header center">
-<h1>Part 3: Making Decisions</h1>
+<section id="part-3-how-to-get-started" class="title-slide slide level1 section-header center">
+<h1>Part 3: How to Get Started</h1>
 
-</section>
-<section id="choosing-your-tools" class="slide level2">
-<h2>Choosing Your Tools</h2>
-<ul>
-<li class="fragment">How do you need it to fail?</li>
-<li class="fragment">Can data leave your environment?</li>
-<li class="fragment">Need transparency &amp; control?</li>
-<li class="fragment">One-time or ongoing?</li>
-</ul>
-<aside class="notes">
-<p>These factors determine whether to use LLMs or traditional tools. It’s not about which is “better” - it’s about your constraints.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="should-i-throw-it-into-an-llm" class="slide level2">
 <h2>Should I Throw It Into an LLM?</h2>
@@ -550,7 +562,7 @@ Abigail Haddad
 <li class="fragment">You control the model (or it’s OK if it changes)</li>
 </ul>
 <aside class="notes">
-<p>LLMs aren’t always the answer. But when they are, they’re magic.</p>
+<p>LLMs aren’t always the answer.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -565,9 +577,12 @@ Abigail Haddad
 </section>
 <section id="alternative-tools" class="slide level2">
 <h2>Alternative Tools</h2>
-<p><strong>Rule-based</strong> - Examples: Regex, keyword matching, templates - Advantages: <span class="emphasis">Deterministic, fast, explainable</span></p>
-<p><strong>Smaller models</strong><br>
-- Examples: BERT, language detection, translation - Advantages: <span class="emphasis">Run locally, less compute</span>, predictable</p>
+<p><strong>Rule-based</strong></p>
+<p>Examples: Regex, keyword matching, templates</p>
+<p>Advantages: <span class="emphasis">Deterministic, fast, explainable</span></p>
+<p><strong>Smaller models</strong></p>
+<p>Examples: BERT, language detection, translation</p>
+<p>Advantages: <span class="emphasis">Run locally, less compute</span>, predictable</p>
 <p><span class="highlight"><em>Hybrid approaches can be the best</em></span></p>
 <aside class="notes">
 <p>Don’t default to LLMs. Sometimes simpler is better. Often you want both - rules to catch the obvious, LLMs for the rest.</p>
@@ -588,18 +603,13 @@ Abigail Haddad
 <h1>Part 4: Real World Lessons</h1>
 
 </section>
-<section id="scale-changes-everything" class="slide level2">
-<h2>Scale Changes Everything</h2>
-<p><strong>As we scale up…</strong></p>
-<ul>
-<li>Handle failures gracefully</li>
-<li>Parallelize operations<br>
-</li>
-<li>Track state properly</li>
-<li>Use real databases</li>
-</ul>
+<section id="you-cant-build-all-the-blocks" class="slide level2">
+<h2>You Can’t Build All The Blocks</h2>
+
+<img data-src="images/too%20many%20blocks.png" class="quarto-figure quarto-figure-center r-stretch" width="700"><p>Each use case needs <span class="emphasis">different blocks</span></p>
+<p>What works for one project <span class="emphasis">won’t work for the next</span></p>
 <aside class="notes">
-<p>What works for hundreds breaks at thousands. Schedule F taught me this the hard way.</p>
+<p>The blocks you need are specific to your problem. You’ll always be building new ones.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -612,18 +622,15 @@ Abigail Haddad
           display:block!important;
       }</style></aside>
 </section>
-<section id="schemas-become-contracts" class="slide level2">
-<h2>Schemas Become Contracts</h2>
-<p>When working with others:</p>
-<ul>
-<li>Field names <span class="emphasis">can’t change</span></li>
-<li>Data types matter<br>
-</li>
-<li>Validation is <span class="emphasis">essential</span></li>
-<li>Document everything</li>
-</ul>
+<section id="my-specific-lessons" class="slide level2">
+<h2>My Specific Lessons</h2>
+<h3 id="as-we-scale-up">As we scale up:</h3>
+<p>✓ Handle failures gracefully</p>
+<p>✓ Parallelize operations</p>
+<p>✓ Track state properly</p>
+<p>✓ Use real databases</p>
 <aside class="notes">
-<p>When someone else is building the frontend, the schema becomes a contract. Change it, break everything.</p>
+<p>What works for hundreds breaks at thousands.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -636,27 +643,23 @@ Abigail Haddad
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-infrastructure-tax" class="slide level2">
-<h2>The Infrastructure Tax</h2>
+<section id="when-working-with-others" class="slide level2">
+<h2>When Working With Others</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>Each <span class="emphasis">new requirement</span> adds complexity:</p>
-<ul>
-<li>Resume from failures → State tracking</li>
-<li>Scale up → Real database<br>
-</li>
-<li>Team collaboration → Schema validation</li>
-<li>Production ready → Monitoring &amp; logging</li>
-</ul>
+<h3 id="schemas-become-contracts">Schemas become contracts:</h3>
+<p>📋 Schemas become <span class="emphasis">contracts</span></p>
+<p>🔒 Field names and formats <span class="emphasis">can’t just change</span></p>
+<p>✅ Validation is <span class="emphasis">essential</span></p>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/resume%20validate%20etc%20blocks.png" class="quarto-figure quarto-figure-center"></p>
+<p><img data-src="images/schema.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div></div>
 <aside class="notes">
-<p>Every new requirement demands specialized pieces. Some you’ll only need once.</p>
+<p>When someone else builds the frontend, your schema becomes a contract.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -668,31 +671,82 @@ Abigail Haddad
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="questions-to-ask" class="slide level2">
+<h2>Questions to Ask?</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="fragment">
+<p><strong>Can data leave your environment?</strong></p>
+</div>
+<div class="fragment" style="margin-top: 1.5em">
+<p><strong>Need transparency?</strong></p>
+</div>
+<div class="fragment" style="margin-top: 1.5em">
+<p><strong>One-time or ongoing?</strong></p>
+</div>
+<div class="fragment" style="margin-top: 1.5em">
+<p><strong>How do you need it to fail?</strong></p>
+</div>
+</div><div class="column" style="width:55%;">
+<div class="fragment">
+<p>→ Local tools vs.&nbsp;cloud models</p>
+</div>
+<div class="fragment" style="margin-top: 1.5em">
+<p>→ Explainable vs.&nbsp;black-box models</p>
+</div>
+<div class="fragment" style="margin-top: 1.5em">
+<p>→ Monitoring needs for production systems</p>
+</div>
+<div class="fragment" style="margin-top: 1.5em">
+<p>→ Silent failures vs.&nbsp;obvious failures</p>
+</div>
+</div></div>
+<aside class="notes">
+<p>These are the key questions that determine your architecture choices. Each answer shapes what tools and approaches you can use.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="remember-my-seven-cents" class="slide level2">
+<h2>Remember My Seven Cents?</h2>
+<p><strong>Gemini only worked because:</strong></p>
+<ul>
+<li class="fragment">✓ Data could leave my environment</li>
+<li class="fragment">✓ 35,000 documents, most with no attachments = small enough for the budget</li>
+</ul>
+<div class="fragment" style="margin-top: 2em">
+<p><span class="emphasis"><strong>Different constraints = Different solution</strong></span></p>
+</div>
+<aside class="notes">
+<p>The seven-cent solution wasn’t magic. It worked because my constraints allowed it. Change any of those checkmarks to an X, and I’d need a totally different approach.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
 </section></section>
 <section>
-<section id="part-5-getting-started-building-right" class="title-slide slide level1 section-header center">
-<h1>Part 5: Getting Started &amp; Building Right</h1>
+<section id="part-5-evaluation" class="title-slide slide level1 section-header center">
+<h1>Part 5: Evaluation</h1>
 
-</section>
-<section id="start-simple" class="slide level2">
-<h2>Start Simple</h2>
-<p><strong>The pattern stays the same:</strong></p>
-
-<img data-src="images/get%20process%20do%20blocks.png" class="quarto-figure quarto-figure-center r-stretch" width="600"><p><strong>Build only the blocks you need</strong></p>
-<p><span class="highlight">Start with the simplest solution that works</span></p>
-<aside class="notes">
-<p>Every pipeline follows the same pattern. But each new surprise means more blocks. Start simple. Add only what you need.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="evaluate-your-pipeline-systematically" class="slide level2">
 <h2>Evaluate Your Pipeline Systematically</h2>
@@ -719,16 +773,77 @@ Abigail Haddad
 </section>
 <section id="make-iteration-painless" class="slide level2">
 <h2>Make Iteration Painless</h2>
-<p>Abstract your processing layer:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Build modularity into your processing layer:</p>
 <ul>
 <li>Swap models without changing code</li>
 <li>Test multiple prompts in parallel</li>
 <li>Compare results side-by-side</li>
 <li>Grid search across configurations</li>
 </ul>
-<p><span class="highlight"><strong>One test suite, many experiments</strong></span></p>
+<p><span class="highlight"><strong>Modular design enables rapid experimentation</strong></span></p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/make%20iteration%20painless.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div></div>
 <aside class="notes">
 <p>Build your pipeline so you can easily test different models and prompts. Abstract the LLM calls so you can iterate quickly.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dont-forget-monitoring" class="slide level2">
+<h2>Don’t Forget Monitoring</h2>
+<p><strong>For production systems, you need a fourth step:</strong></p>
+<ul>
+<li class="fragment"><strong>Natural labeling</strong>: When you have ground truth later</li>
+<li class="fragment"><strong>Strategic sampling</strong>: Human review of edge cases</li>
+<li class="fragment"><strong>Performance tracking</strong>: Know when models drift</li>
+<li class="fragment"><strong>Failure alerts</strong>: Catch problems early</li>
+</ul>
+<div class="fragment" style="margin-top: 2em">
+<p><span class="highlight"><strong>Production pipelines need ongoing care</strong></span></p>
+</div>
+<aside class="notes">
+<p>The fourth step that everyone forgets. Especially important for LLMs that can fail silently.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="part-6-conclusion" class="title-slide slide level1 section-header center">
+<h1>Part 6: Conclusion</h1>
+
+</section>
+<section id="start-simple" class="slide level2">
+<h2>Start Simple</h2>
+
+<img data-src="images/get%20process%20do%20blocks.png" class="quarto-figure quarto-figure-center r-stretch" width="600"><p><strong>Build only the blocks you need</strong></p>
+<aside class="notes">
+<p>Every pipeline follows the same pattern. But each new surprise means more blocks. Start simple. Add only what you need.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -762,6 +877,9 @@ Abigail Haddad
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section class="slide level2">
+
 </section>
 <section id="questions" class="slide level2">
 <h2>Questions?</h2>
