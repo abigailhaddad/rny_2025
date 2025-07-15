@@ -22,12 +22,6 @@ format:
 
 **Deadline: [SOON]{.highlight}**
 
-::: {.notes}
-Building a tool to analyze public comments on Schedule F.
-Need to know: do they support or oppose?
-Comment period closing soon.
-:::
-
 
 ---
 
@@ -35,11 +29,6 @@ Comment period closing soon.
 
 ![](images/my usual blocks.png){fig-align="center" width="600"}
 
-::: {.notes}
-I'd built document processing tools before. 
-PyPDF2 for PDFs, python-docx for Word docs.
-Simple, reliable blocks that worked great.
-:::
 
 ---
 
@@ -61,10 +50,6 @@ Simple, reliable blocks that worked great.
 :::
 :::
 
-::: {.notes}
-But this time, some attachments were weird.
-My usual blocks were failing.
-:::
 
 ---
 
@@ -72,10 +57,6 @@ My usual blocks were failing.
 
 ![](images/ocr.png){fig-align="center" width="700"}
 
-::: {.notes}
-So I added new blocks. OCR for images.
-But that spit out gibberish sometimes.
-:::
 
 ---
 
@@ -83,10 +64,6 @@ But that spit out gibberish sometimes.
 
 ![](images/is this text.png){fig-align="center" width="800"}
 
-::: {.notes}
-This is what I was staring at.
-While the deadline approached.
-:::
 
 ---
 
@@ -94,9 +71,6 @@ While the deadline approached.
 
 ![](images/gibberish detector blocks.png){fig-align="center" width="700"}
 
-::: {.notes}
-Now I'm debugging my gibberish detector...
-:::
 
 ---
 
@@ -104,9 +78,6 @@ Now I'm debugging my gibberish detector...
 
 ![](images/debugging.png){fig-align="center" width="700"}
 
-::: {.notes}
-The complexity was spiraling out of control.
-:::
 
 ---
 
@@ -117,10 +88,6 @@ if extraction_fails(doc):
     result = gemini.process(doc)
 ```
 
-::: {.notes}
-Finally said fuck it. Let me try Gemini on everything that fails.
-It's multimodal, let's see how it does.
-:::
 
 ---
 
@@ -130,10 +97,6 @@ It's multimodal, let's see how it does.
 It Works!! 🎉🎊🥳
 :::
 
-::: {.notes}
-It just... worked. All of it. The dark PDFs, the memes, the handwritten notes.
-Everything my complex pipeline couldn't handle.
-:::
 
 ---
 
@@ -141,9 +104,6 @@ Everything my complex pipeline couldn't handle.
 
 ![](images/seven cents.png){fig-align="center" width="600"}
 
-::: {.notes}
-Seven cents. That's what it cost.
-:::
 
 ---
 
@@ -157,10 +117,6 @@ Seven cents. That's what it cost.
 
 **Two blocks deleted:** [~~OCR~~]{style="color: red; text-decoration: line-through"}    [~~Gibberish Detector~~]{style="color: red; text-decoration: line-through"}
 
-::: {.notes}
-Seven cents. That's what it cost.
-When those comments dropped, I was ready.
-:::
 
 ---
 
@@ -168,11 +124,8 @@ When those comments dropped, I was ready.
 
 ![](images/comment_site.jpg){fig-align="center" width="800"}
 
-::: {.notes}
-The final website showing all 35,000 comments analyzed and searchable.
-:::
 
-# Part 2: The Text Data Pipeline {.section-header}
+# Part 2: A Step Back: The Text Data Pipeline {.section-header}
 
 ## Every Organization Has These
 
@@ -186,11 +139,6 @@ The final website showing all 35,000 comments analyzed and searchable.
 
 📄 Mountains of contracts
 
-::: {.notes}
-Every organization has document stacks.
-Similar documents that need the same questions answered.
-The time to process them blocks valuable insights.
-:::
 
 ---
 
@@ -210,10 +158,6 @@ The time to process them blocks valuable insights.
 ***Time Is The Barrier To Answering These***
 :::
 
-::: {.notes}
-The same questions, asked about each document.
-Currently done manually. Could be automated.
-:::
 
 ---
 
@@ -222,10 +166,6 @@ Currently done manually. Could be automated.
 ![](images/pipeline.png){fig-align="center" width="700"}
 
 
-::: {.notes}
-Every pipeline follows the same pattern.
-Understanding this pattern is key.
-:::
 
 ---
 
@@ -245,13 +185,46 @@ Understanding this pattern is key.
 :::
 :::
 
-::: {.notes}
-Every text processing pipeline follows this pattern.
-Get text, process it, do something with results.
-:::
 
 # Part 3: How to Get Started {.section-header}
 
+## What Are You Trying to Do?
+
+::: {.columns}
+::: {.column width="50%"}
+**What documents?**
+
+- Clean PDFs with structured text?
+- Scanned images of varying quality?
+- Mix of formats and attachments?
+- Handwritten notes or forms?
+:::
+
+::: {.column width="50%"}
+**What's your goal?**
+
+- Extract specific fields?
+- Classify or categorize?
+- Summarize content?
+- Find patterns across documents?
+:::
+:::
+
+---
+
+## Your Equation
+
+::: {style="text-align: center; margin-top: 20%"}
+**Your documents**  
++  
+**Your goals**  
++  
+**Your constraints**  
+=  
+[**Your solution**]{.emphasis style="font-size: 1.5em"}
+:::
+
+---
 
 ## Should I Throw It Into an LLM?
 
@@ -259,48 +232,63 @@ Get text, process it, do something with results.
 **MAYBE!!!**
 :::
 
-::: {.notes}
-It's not a yes or no question.
-It depends on your specific constraints and requirements.
-:::
 
 ---
 
-## LLMs Work Well When...
+## Four Factors to Consider
+
+::: {.columns}
+::: {.column width="50%"}
+**🎯 Accuracy**  
+How good is good enough?  
+How does it fail?
+
+**🔍 Transparency**  
+Need deterministic output?  
+Must explain decisions?
+:::
+
+::: {.column width="50%"}
+**💰 Compute/Budget/Privacy**  
+Can data leave your servers?  
+API costs acceptable?
+
+**⏰ One-Time vs. Ongoing**  
+Single batch or production?  
+Who monitors failures?
+:::
+:::
+
+
+---
+
+## When to Use What
+
+| **📏 Rule-based** | **🤖 Smaller Models** | **🧠 LLMs** |
+|---|---|---|
+| • Regex<br>• Decision trees<br>• Keywords | • BERT<br>• spaCy<br>• Custom classifiers | • GPT-4<br>• Claude<br>• Gemini |
+| **Perfect when:**<br>✓ Need explainability<br>✓ Patterns are simple | **Perfect when:**<br>✓ Must run locally<br>✓ Single-purpose tool<br>✓ Don't need perfect legibility | **Perfect when:**<br>✓ Complex reasoning<br>✓ Have budget/security<br>✓ Flexibility worth opacity, costs, monitoring |
+
+::: {.fragment style="margin-top: 1.5em; text-align: center"}
+[**Mix and match based on your four factors**]{.highlight}
+:::
+
+
+---
+
+## Remember My Seven Cents?
+
+**Gemini only worked because:**
 
 ::: {.incremental}
-- [Accurate enough]{.emphasis} for your use case
-- You have compute/budget for it
-- Perfect legibility not required
-- You control the model (or it's OK if it changes)
+- ✓ Data could leave my environment
+- ✓ 35,000 documents, most with no attachments = small enough for the budget
 :::
 
-::: {.notes}
-LLMs aren't always the answer.
+::: {.fragment style="margin-top: 2em"}
+[**Different constraints = Different solution**]{.emphasis}
 :::
 
----
-
-## Alternative Tools
-
-**Rule-based**
-
-Examples: Regex, keyword matching, templates
-
-Advantages: [Deterministic, fast, explainable]{.emphasis}
-
-**Smaller models**  
-
-Examples: BERT, language detection, translation
-
-Advantages: [Run locally, less compute]{.emphasis}, predictable
-
-[*Hybrid approaches can be the best*]{.highlight}
-
-::: {.notes}
-Don't default to LLMs. Sometimes simpler is better.
-Often you want both - rules to catch the obvious, LLMs for the rest.
-:::
 
 # Part 4: Real World Lessons {.section-header}
 
@@ -312,10 +300,6 @@ Each use case needs [different blocks]{.emphasis}
 
 What works for one project [won't work for the next]{.emphasis}
 
-::: {.notes}
-The blocks you need are specific to your problem.
-You'll always be building new ones.
-:::
 
 ---
 
@@ -331,9 +315,6 @@ You'll always be building new ones.
 
 ✓ Use real databases
 
-::: {.notes}
-What works for hundreds breaks at thousands.
-:::
 
 ---
 
@@ -355,75 +336,38 @@ What works for hundreds breaks at thousands.
 :::
 :::
 
-::: {.notes}
-When someone else builds the frontend, your schema becomes a contract.
-:::
-
 ---
 
-## Questions to Ask?
+## Enforce Structured Output
+
+**Don't ask nicely. Enforce it.**
 
 ::: {.columns}
-::: {.column width="45%"}
-::: {.fragment}
-**Can data leave your environment?**
+::: {.column width="50%"}
+❌ **Don't do this:**
+```python
+"Please only respond with 
+'support' or 'oppose'"
+
+# Hope it listens...
+```
 :::
 
-::: {.fragment style="margin-top: 1.5em"}
-**Need transparency?**
+::: {.column width="50%"}
+✅ **Do this:**
+```python
+class Response:
+  stance: Literal[
+    "support", 
+    "oppose"
+  ]
+# Enforced structure
+```
 :::
-
-::: {.fragment style="margin-top: 1.5em"}
-**One-time or ongoing?**
-:::
-
-::: {.fragment style="margin-top: 1.5em"}
-**How do you need it to fail?**
-:::
-:::
-
-::: {.column width="55%"}
-::: {.fragment}
-→ Local tools vs. cloud models
-:::
-
-::: {.fragment style="margin-top: 1.5em"}
-→ Explainable vs. black-box models
-:::
-
-::: {.fragment style="margin-top: 1.5em"}
-→ Monitoring needs for production systems
-:::
-
-::: {.fragment style="margin-top: 1.5em"}
-→ Silent failures vs. obvious failures
-:::
-:::
-:::
-
-::: {.notes}
-These are the key questions that determine your architecture choices.
-Each answer shapes what tools and approaches you can use.
-:::
-
----
-
-## Remember My Seven Cents?
-
-**Gemini only worked because:**
-
-::: {.incremental}
-- ✓ Data could leave my environment
-- ✓ 35,000 documents, most with no attachments = small enough for the budget
 :::
 
 ::: {.fragment style="margin-top: 2em"}
-[**Different constraints = Different solution**]{.emphasis}
-:::
-
-::: {.notes}
-The seven-cent solution wasn't magic. It worked because my constraints allowed it.
-Change any of those checkmarks to an X, and I'd need a totally different approach.
+[**The LLM can only choose from your options**]{.emphasis}
 :::
 
 ---
@@ -432,16 +376,24 @@ Change any of those checkmarks to an X, and I'd need a totally different approac
 
 ## Evaluate Your Pipeline Systematically
 
-- Create test cases early
-- Include weird examples  
-- Test edge cases
-- Ask: ["What keeps me up at night?"]{.highlight}
+::: {.columns}
+::: {.column width="50%"}
+**📝 Build test sets:**
 
-::: {.notes}
-From "What To Ask Your Engineers" - evaluation is critical.
-Test on edge cases. Your weird data is someone's normal.
-Work with your engineers to define success.
+- Real examples from your data
+- The weird edge cases  
+- What failed before
 :::
+
+::: {.column width="50%"}
+**🎯 Test what matters:**
+
+- Accuracy on YOUR data
+- How it fails (not just how often)
+- [What keeps me up at night?]{.highlight}
+:::
+:::
+
 
 ---
 
@@ -464,10 +416,7 @@ Build modularity into your processing layer:
 :::
 :::
 
-::: {.notes}
-Build your pipeline so you can easily test different models and prompts.
-Abstract the LLM calls so you can iterate quickly.
-:::
+---
 
 ## Don't Forget Monitoring
 
@@ -484,11 +433,6 @@ Abstract the LLM calls so you can iterate quickly.
 [**Production pipelines need ongoing care**]{.highlight}
 :::
 
-::: {.notes}
-The fourth step that everyone forgets.
-Especially important for LLMs that can fail silently.
-:::
-
 ---
 
 # Part 6: Conclusion {.section-header}
@@ -499,34 +443,19 @@ Especially important for LLMs that can fail silently.
 
 **Build only the blocks you need**
 
-
-::: {.notes}
-Every pipeline follows the same pattern.
-But each new surprise means more blocks.
-Start simple. Add only what you need.
-:::
+---
 
 ---
 
-## The Next Challenge
+## My Next Challenge
 
-New comments. Different source.
-
-[Another 7 months?]{.emphasis}
+New comments. Different sources.
 
 ::: {.fragment style="margin-top: 2em"}
-**No. I abstracted it.**
+**I generalized out my tools.**
 
 [Hours, not months.]{.highlight}
 :::
-
-::: {.notes}
-The real power comes from abstraction.
-Build once, reuse everywhere.
-Time is no longer the barrier.
-:::
-
----
 
 
 ---
@@ -539,7 +468,3 @@ Time is no longer the barrier.
 📝 [presentofcoding.substack.com](https://presentofcoding.substack.com)
 :::
 
-::: {.notes}
-Remember: Start simple. Add blocks as needed.
-Every organization has document stacks waiting to be processed.
-:::
