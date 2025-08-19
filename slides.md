@@ -1,5 +1,5 @@
 ---
-theme: penguin
+theme: default
 background: https://source.unsplash.com/collection/94734566/1920x1080
 class: text-center
 highlighter: shiki
@@ -61,11 +61,11 @@ layout: two-cols
 
 # The Weird Stuff
 
-<div class="space-y-8 font-semibold">
-  <p>📄 Dark scanned PDFs</p>
-  <p>🎭 Random meme attachments</p>
-  <p>📸 Blurry photos of handwritten notes</p>
-</div>
+📄 Dark scanned PDFs
+
+🎭 Random meme attachments  
+
+📸 Blurry photos of handwritten notes
 
 ::right::
 
