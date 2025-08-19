@@ -761,46 +761,23 @@ pre {
   @apply text-gray-500;
 }
 
-/* Standardized text size classes */
-.text-standard {
-  font-size: 36px !important;
-}
-
-.text-standard-small {
-  font-size: 32px !important;
-}
-
-.text-standard-large {
-  font-size: 44px !important;
-}
-
-.text-standard-xl {
-  font-size: 52px !important;
-}
-
-/* Override Tailwind's tiny text classes */
-.slidev-layout .text-sm {
-  font-size: 32px !important;
-}
-
+/* Simplified text sizes - only 3 options */
+.slidev-layout .text-sm,
+.slidev-layout .text-base,
 .slidev-layout .text-lg {
-  font-size: 40px !important;
+  font-size: 36px !important;  /* Standard size for all body text */
 }
 
-.slidev-layout .text-xl {
-  font-size: 44px !important;
-}
-
-.slidev-layout .text-2xl {
-  font-size: 48px !important;
-}
-
+.slidev-layout .text-xl,
+.slidev-layout .text-2xl,
 .slidev-layout .text-3xl {
-  font-size: 52px !important;
+  font-size: 48px !important;  /* Emphasis size */
 }
 
-.slidev-layout .text-4xl {
-  font-size: 56px !important;
+.slidev-layout .text-4xl,
+.slidev-layout .text-5xl,
+.slidev-layout .text-6xl {
+  font-size: 64px !important;  /* Large emphasis size */
 }
 
 .slide-content {
