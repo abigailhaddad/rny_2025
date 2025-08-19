@@ -756,6 +756,11 @@ pre {
   @apply space-y-3;
 }
 
+/* Make gray text lighter for better visibility */
+.slidev-layout .text-gray-700 {
+  @apply text-gray-500;
+}
+
 .slide-content {
   @apply mt-8;
 }
