@@ -181,17 +181,37 @@ layout: default
 
 # Every Organization Has These
 
-🏥 **Medical Records**
-
-👤 **Resumes**  
-
-💬 **Customer Complaints**
-
-⚠️ **Error Logs**
-
-📄 **Contracts**
-
-📊 **Reports**
+<div class="grid grid-cols-3 gap-8 mt-12">
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">🏥</div>
+    <p class="text-2xl font-semibold">Medical Records</p>
+  </div>
+  
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">👤</div>
+    <p class="text-2xl font-semibold">Resumes</p>
+  </div>
+  
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">💬</div>
+    <p class="text-2xl font-semibold">Customer Complaints</p>
+  </div>
+  
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">⚠️</div>
+    <p class="text-2xl font-semibold">Error Logs</p>
+  </div>
+  
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">📄</div>
+    <p class="text-2xl font-semibold">Contracts</p>
+  </div>
+  
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">📊</div>
+    <p class="text-2xl font-semibold">Reports</p>
+  </div>
+</div>
 
 ---
 layout: default
@@ -250,19 +270,27 @@ layout: default
 
 # What Are You Trying to Do?
 
-## 📄 Your Documents
-
-✓ Clean PDFs?
-✓ Scanned images?
-✓ Mixed formats?
-✓ Handwritten?
-
-## 🎯 Your Goals
-
-→ Extract fields?
-→ Classify docs?
-→ Summarize?
-→ Find patterns?
+<div class="grid grid-cols-2 gap-16 mt-12">
+  <div>
+    <h2 class="font-bold mb-8">📄 Your Documents</h2>
+    <div class="space-y-6">
+      <p>✓ Clean PDFs?</p>
+      <p>✓ Scanned images?</p>
+      <p>✓ Mixed formats?</p>
+      <p>✓ Handwritten?</p>
+    </div>
+  </div>
+  
+  <div>
+    <h2 class="font-bold mb-8">🎯 Your Goals</h2>
+    <div class="space-y-6">
+      <p>→ Extract fields?</p>
+      <p>→ Classify docs?</p>
+      <p>→ Summarize?</p>
+      <p>→ Find patterns?</p>
+    </div>
+  </div>
+</div>
 
 ---
 layout: default
@@ -270,17 +298,31 @@ layout: default
 
 # Don't Forget Your Constraints
 
-🔒 **Privacy**
-Can data leave?
-
-💰 **Budget**
-API costs OK?
-
-⏰ **Time**
-One-off or ongoing?
-
-📊 **Explain**
-Show your work?
+<div class="grid grid-cols-2 gap-8 mt-12">
+  <div class="text-center p-8">
+    <div class="text-6xl mb-4">🔒</div>
+    <h3 class="text-3xl font-bold">Privacy</h3>
+    <p class="text-2xl mt-2">Can data leave?</p>
+  </div>
+  
+  <div class="text-center p-8">
+    <div class="text-6xl mb-4">💰</div>
+    <h3 class="text-3xl font-bold">Budget</h3>
+    <p class="text-2xl mt-2">API costs OK?</p>
+  </div>
+  
+  <div class="text-center p-8">
+    <div class="text-6xl mb-4">⏰</div>
+    <h3 class="text-3xl font-bold">Time</h3>
+    <p class="text-2xl mt-2">One-off or ongoing?</p>
+  </div>
+  
+  <div class="text-center p-8">
+    <div class="text-6xl mb-4">📊</div>
+    <h3 class="text-3xl font-bold">Explain</h3>
+    <p class="text-2xl mt-2">Show your work?</p>
+  </div>
+</div>
 
 ---
 layout: center
@@ -316,21 +358,39 @@ layout: default
 
 # Four Factors to Consider
 
-### 🎯 Accuracy
-- How good is good enough?
-- How does it fail?
-
-### 🔍 Transparency
-- Need deterministic output?
-- Must explain decisions?
-
-### 💰 Resources
-- Can data leave your servers?
-- API costs acceptable?
-
-### ⏰ Timeline
-- Single batch or production?
-- Who monitors failures?
+<div class="grid grid-cols-2 gap-8 mt-8">
+  <div class="bg-blue-100 p-6 rounded-lg">
+    <h3 class="text-xl mb-4 font-bold">🎯 Accuracy</h3>
+    <ul class="space-y-2">
+      <li>How good is good enough?</li>
+      <li>How does it fail?</li>
+    </ul>
+  </div>
+  
+  <div class="bg-green-100 p-6 rounded-lg">
+    <h3 class="text-xl mb-4 font-bold">🔍 Transparency</h3>
+    <ul class="space-y-2">
+      <li>Need deterministic output?</li>
+      <li>Must explain decisions?</li>
+    </ul>
+  </div>
+  
+  <div class="bg-orange-100 p-6 rounded-lg">
+    <h3 class="text-xl mb-4 font-bold">💰 Resources</h3>
+    <ul class="space-y-2">
+      <li>Can data leave your servers?</li>
+      <li>API costs acceptable?</li>
+    </ul>
+  </div>
+  
+  <div class="bg-purple-100 p-6 rounded-lg">
+    <h3 class="text-xl mb-4 font-bold">⏰ Timeline</h3>
+    <ul class="space-y-2">
+      <li>Single batch or production?</li>
+      <li>Who monitors failures?</li>
+    </ul>
+  </div>
+</div>
 
 ---
 layout: default
@@ -386,13 +446,27 @@ layout: default
 
 # Scaling Up: Key Lessons
 
-🛡️ **Handle Failures**
-
-⚡ **Parallelize**
-
-📍 **Track State**
-
-🗄️ **Real Databases**
+<div class="grid grid-cols-2 gap-12 mt-16">
+  <div class="text-center">
+    <div class="text-8xl mb-6">🛡️</div>
+    <h3 class="text-3xl font-bold">Handle Failures</h3>
+  </div>
+  
+  <div class="text-center">
+    <div class="text-8xl mb-6">⚡</div>
+    <h3 class="text-3xl font-bold">Parallelize</h3>
+  </div>
+  
+  <div class="text-center">
+    <div class="text-8xl mb-6">📍</div>
+    <h3 class="text-3xl font-bold">Track State</h3>
+  </div>
+  
+  <div class="text-center">
+    <div class="text-8xl mb-6">🗄️</div>
+    <h3 class="text-3xl font-bold">Real Databases</h3>
+  </div>
+</div>
 
 ---
 layout: two-cols
@@ -421,6 +495,9 @@ layout: default
 
 # Enforce Structured Output
 
+<div class="grid grid-cols-2 gap-8 mt-8">
+<div class="bg-red-100 p-10 rounded-lg">
+
 ### ❌ Don't:
 
 ```python
@@ -430,6 +507,9 @@ layout: default
 # Hope it listens...
 ```
 
+</div>
+<div class="bg-green-100 p-10 rounded-lg">
+
 ### ✅ Do:
 
 ```python
@@ -437,6 +517,9 @@ class StanceEnum(str, Enum):
     support = 'support'
     oppose = 'oppose'
 ```
+
+</div>
+</div>
 
 ---
 layout: section
