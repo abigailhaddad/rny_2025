@@ -532,18 +532,31 @@ layout: default
 
 # Enforce Structured Output
 
-**Don't ask nicely. Enforce it.**
+<div class="grid grid-cols-2 gap-8 mt-8">
+<div class="bg-red-100 p-10 rounded-lg">
 
-❌ **Don't:** "Please only respond with 'support' or 'oppose'"
-
-✅ **Do:** Use structured outputs with Literal types
+<h3 class="text-red-600 text-3xl font-bold mb-6">❌ Don't:</h3>
 
 ```python
-class Response:
-    stance: Literal["support", "oppose"]
+"Please only respond with 
+'support' or 'oppose'"
+
+# Hope it listens...
 ```
 
-**The LLM can only choose from your options**
+</div>
+<div class="bg-green-100 p-10 rounded-lg">
+
+<h3 class="text-green-600 text-3xl font-bold mb-6">✅ Do:</h3>
+
+```python
+class StanceEnum(str, Enum):
+    support = 'support'
+    oppose = 'oppose'
+```
+
+</div>
+</div>
 
 ---
 layout: section

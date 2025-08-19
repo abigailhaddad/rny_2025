@@ -212,6 +212,18 @@ It Works!! 🎉🎊🥳
 
 ---
 
+## Don't Forget Your Constraints
+
+::: {.incremental}
+- **Privacy**: Can data leave your servers?
+- **Budget**: What can you spend on API calls?
+- **Time**: One-off analysis or ongoing pipeline?
+- **Explainability**: Need to show your work?
+- **Reliability**: How much drift can you tolerate?
+:::
+
+---
+
 ## Your Equation
 
 ::: {style="text-align: center; margin-top: 20%"}
