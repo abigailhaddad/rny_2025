@@ -204,15 +204,35 @@ layout: default
 
 # Every Organization Has These
 
-<div class="grid grid-cols-2 gap-8 mt-8 text-xl">
-  <div class="space-y-4">
-    <div>🏥 Stacks of medical records</div>
-    <div>👤 Piles of resumes</div>
-    <div>💬 Endless customer complaints</div>
+<div class="grid grid-cols-3 gap-8 mt-12">
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">🏥</div>
+    <p class="text-2xl font-semibold">Medical Records</p>
   </div>
-  <div class="space-y-4">
-    <div>⚠️ Streams of error logs</div>
-    <div>📄 Mountains of contracts</div>
+  
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">👤</div>
+    <p class="text-2xl font-semibold">Resumes</p>
+  </div>
+  
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">💬</div>
+    <p class="text-2xl font-semibold">Customer Complaints</p>
+  </div>
+  
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">⚠️</div>
+    <p class="text-2xl font-semibold">Error Logs</p>
+  </div>
+  
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">📄</div>
+    <p class="text-2xl font-semibold">Contracts</p>
+  </div>
+  
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">📊</div>
+    <p class="text-2xl font-semibold">Reports</p>
   </div>
 </div>
 
@@ -222,16 +242,16 @@ layout: default
 
 # Not RAG: Same Questions Each Time
 
-<div class="space-y-8 mt-8 text-xl">
-  <div>"Is this fraudulent?"</div>
-  <div>"Should we interview them?"</div>
-  <div>"What's the main complaint?"</div>
-  <div>"What caused the error?"</div>
-  <div>"What's the risk?"</div>
+<div class="space-y-10 mt-12 text-center">
+  <div class="text-4xl font-bold text-gray-700">"Is this fraudulent?"</div>
+  <div class="text-4xl font-bold text-gray-700">"Should we interview them?"</div>
+  <div class="text-4xl font-bold text-gray-700">"What's the main complaint?"</div>
 </div>
 
-<div class="mt-8 text-xl text-center font-bold text-blue-600">
-  Time Is The Barrier To Answering These
+<div class="mt-16 p-8 bg-blue-100 rounded-xl">
+  <p class="text-3xl font-bold text-blue-700">
+    ⏰ Time is the only barrier
+  </p>
 </div>
 
 ---
@@ -285,21 +305,27 @@ layout: two-cols
 
 # What Are You Trying to Do?
 
-### What documents?
-
-- Clean PDFs with structured text?
-- Scanned images of varying quality?
-- Mix of formats and attachments?
-- Handwritten notes or forms?
-
-::right::
-
-### What's your goal?
-
-- Extract specific fields?
-- Classify or categorize?
-- Summarize content?
-- Find patterns across documents?
+<div class="grid grid-cols-2 gap-16 mt-12">
+  <div>
+    <h2 class="text-4xl font-bold text-blue-600 mb-8">📄 Your Documents</h2>
+    <div class="space-y-6 text-2xl">
+      <p>✓ Clean PDFs?</p>
+      <p>✓ Scanned images?</p>
+      <p>✓ Mixed formats?</p>
+      <p>✓ Handwritten?</p>
+    </div>
+  </div>
+  
+  <div>
+    <h2 class="text-4xl font-bold text-green-600 mb-8">🎯 Your Goals</h2>
+    <div class="space-y-6 text-2xl">
+      <p>→ Extract fields?</p>
+      <p>→ Classify docs?</p>
+      <p>→ Summarize?</p>
+      <p>→ Find patterns?</p>
+    </div>
+  </div>
+</div>
 
 ---
 layout: default
@@ -307,38 +333,29 @@ layout: default
 
 # Don't Forget Your Constraints
 
-<div class="grid grid-cols-2 gap-12 mt-8 text-xl">
-  <div class="space-y-6">
-    <div class="flex gap-4">
-      <span class="text-xl">🔒</span>
-      <div>
-        <strong>Privacy</strong><br/>
-        Can data leave your servers?
-      </div>
-    </div>
-    <div class="flex gap-4">
-      <span class="text-xl">💰</span>
-      <div>
-        <strong>Budget</strong><br/>
-        What can you spend on API calls?
-      </div>
-    </div>
+<div class="grid grid-cols-2 gap-8 mt-12">
+  <div class="text-center p-8">
+    <div class="text-6xl mb-4">🔒</div>
+    <h3 class="text-3xl font-bold text-blue-600">Privacy</h3>
+    <p class="text-2xl mt-2">Can data leave?</p>
   </div>
-  <div class="space-y-6">
-    <div class="flex gap-4">
-      <span class="text-xl">⏰</span>
-      <div>
-        <strong>Time</strong><br/>
-        One-off analysis or ongoing pipeline?
-      </div>
-    </div>
-    <div class="flex gap-4">
-      <span class="text-xl">📊</span>
-      <div>
-        <strong>Explainability</strong><br/>
-        Need to show your work?
-      </div>
-    </div>
+  
+  <div class="text-center p-8">
+    <div class="text-6xl mb-4">💰</div>
+    <h3 class="text-3xl font-bold text-green-600">Budget</h3>
+    <p class="text-2xl mt-2">API costs OK?</p>
+  </div>
+  
+  <div class="text-center p-8">
+    <div class="text-6xl mb-4">⏰</div>
+    <h3 class="text-3xl font-bold text-orange-600">Time</h3>
+    <p class="text-2xl mt-2">One-off or ongoing?</p>
+  </div>
+  
+  <div class="text-center p-8">
+    <div class="text-6xl mb-4">📊</div>
+    <h3 class="text-3xl font-bold text-purple-600">Explain</h3>
+    <p class="text-2xl mt-2">Show your work?</p>
   </div>
 </div>
 
@@ -471,29 +488,27 @@ layout: default
 layout: default
 ---
 
-# My Specific Lessons
+# Scaling Up: Key Lessons
 
-## As we scale up:
-
-<div class="space-y-6 mt-8 text-xl">
-  <div class="flex items-center gap-4">
-    <span class="text-green-500 text-xl">✓</span>
-    <span>Handle failures gracefully</span>
+<div class="grid grid-cols-2 gap-12 mt-16">
+  <div class="text-center">
+    <div class="text-8xl mb-6">🛡️</div>
+    <h3 class="text-3xl font-bold">Handle Failures</h3>
   </div>
   
-  <div class="flex items-center gap-4">
-    <span class="text-green-500 text-xl">✓</span>
-    <span>Parallelize operations</span>
+  <div class="text-center">
+    <div class="text-8xl mb-6">⚡</div>
+    <h3 class="text-3xl font-bold">Parallelize</h3>
   </div>
   
-  <div class="flex items-center gap-4">
-    <span class="text-green-500 text-xl">✓</span>
-    <span>Track state properly</span>
+  <div class="text-center">
+    <div class="text-8xl mb-6">📍</div>
+    <h3 class="text-3xl font-bold">Track State</h3>
   </div>
   
-  <div class="flex items-center gap-4">
-    <span class="text-green-500 text-xl">✓</span>
-    <span>Use real databases</span>
+  <div class="text-center">
+    <div class="text-8xl mb-6">🗄️</div>
+    <h3 class="text-3xl font-bold">Real Databases</h3>
   </div>
 </div>
 
@@ -709,9 +724,34 @@ pre {
   color: white !important;
 }
 
-/* Standardized slide layouts */
+/* Standardized slide layouts - LARGER for back of room */
+.slidev-layout {
+  font-size: 28px !important;
+  line-height: 1.6;
+}
+
 .slidev-layout h1 {
-  @apply text-4xl font-bold mb-8;
+  @apply font-bold mb-8;
+  font-size: 56px !important;
+}
+
+.slidev-layout h2 {
+  @apply font-bold mb-6;
+  font-size: 48px !important;
+}
+
+.slidev-layout h3 {
+  @apply font-bold mb-4;
+  font-size: 36px !important;
+}
+
+.slidev-layout p, .slidev-layout li {
+  font-size: 28px !important;
+  line-height: 1.8;
+}
+
+.slidev-layout ul, .slidev-layout ol {
+  @apply space-y-3;
 }
 
 .slide-content {
