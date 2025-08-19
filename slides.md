@@ -302,7 +302,7 @@ layout: section
 # Part 3: How to Get Started
 
 ---
-layout: two-cols
+layout: default
 ---
 
 # What Are You Trying to Do?
@@ -726,58 +726,79 @@ pre {
   color: white !important;
 }
 
-/* Standardized slide layouts - LARGER for back of room */
-.slidev-layout {
-  font-size: 36px !important;
-  line-height: 1.6;
+/* SIMPLE SIZING SYSTEM - Change these values to resize everything */
+:root {
+  --text-base: 44px;      /* Normal text */
+  --text-large: 56px;     /* Emphasized text */
+  --text-huge: 72px;      /* Big statements */
+  --h1-size: 72px;        /* Main headings */
+  --h2-size: 56px;        /* Section headings */
+  --h3-size: 48px;        /* Subheadings */
 }
 
+/* Apply base font size to everything */
+.slidev-layout {
+  font-size: var(--text-base) !important;
+  line-height: 1.6;
+  color: #1a202c; /* Dark gray default */
+}
+
+/* Headings */
 .slidev-layout h1 {
+  font-size: var(--h1-size) !important;
   @apply font-bold mb-8;
-  font-size: 72px !important;
 }
 
 .slidev-layout h2 {
+  font-size: var(--h2-size) !important;
   @apply font-bold mb-6;
-  font-size: 56px !important;
 }
 
 .slidev-layout h3 {
+  font-size: var(--h3-size) !important;
   @apply font-bold mb-4;
-  font-size: 44px !important;
 }
 
-.slidev-layout p, .slidev-layout li {
-  font-size: 36px !important;
+/* All text elements default to base size */
+.slidev-layout p,
+.slidev-layout li,
+.slidev-layout div,
+.slidev-layout span {
+  font-size: inherit;
   line-height: 1.8;
 }
 
-.slidev-layout ul, .slidev-layout ol {
-  @apply space-y-3;
-}
-
-/* Make gray text lighter for better visibility */
-.slidev-layout .text-gray-700 {
-  @apply text-gray-500;
-}
-
-/* Simplified text sizes - only 3 options */
+/* Override ALL Tailwind text sizes to our 3 sizes */
+.slidev-layout .text-xs,
 .slidev-layout .text-sm,
 .slidev-layout .text-base,
-.slidev-layout .text-lg {
-  font-size: 36px !important;  /* Standard size for all body text */
-}
-
+.slidev-layout .text-lg,
 .slidev-layout .text-xl,
-.slidev-layout .text-2xl,
-.slidev-layout .text-3xl {
-  font-size: 48px !important;  /* Emphasis size */
+.slidev-layout .text-2xl {
+  font-size: var(--text-base) !important;
 }
 
-.slidev-layout .text-4xl,
+.slidev-layout .text-3xl,
+.slidev-layout .text-4xl {
+  font-size: var(--text-large) !important;
+}
+
 .slidev-layout .text-5xl,
 .slidev-layout .text-6xl {
-  font-size: 64px !important;  /* Large emphasis size */
+  font-size: var(--text-huge) !important;
+}
+
+/* Remove all gray text colors - use default dark */
+.slidev-layout .text-gray-100,
+.slidev-layout .text-gray-200,
+.slidev-layout .text-gray-300,
+.slidev-layout .text-gray-400,
+.slidev-layout .text-gray-500,
+.slidev-layout .text-gray-600,
+.slidev-layout .text-gray-700,
+.slidev-layout .text-gray-800,
+.slidev-layout .text-gray-900 {
+  color: #1a202c !important;
 }
 
 .slide-content {
