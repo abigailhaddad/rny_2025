@@ -146,17 +146,31 @@ layout: default
 
 # The Result
 
-✅ 35,000 comments processed
-
-🚀 Website live in days
-
-⏰ Avoided: months of manual work
-
-Two blocks deleted:
-
-~~OCR~~
-
-~~Gibberish Detector~~
+<div class="grid grid-cols-2 gap-6 mt-8">
+  <div class="border-2 rounded-lg p-6 text-center">
+    <div class="text-5xl mb-4">✅</div>
+    <div class="text-2xl font-bold">35,000</div>
+    <div>comments processed</div>
+  </div>
+  
+  <div class="border-2 rounded-lg p-6 text-center">
+    <div class="text-5xl mb-4">🚀</div>
+    <div class="text-2xl font-bold">Days</div>
+    <div>to launch website</div>
+  </div>
+  
+  <div class="border-2 rounded-lg p-6 text-center">
+    <div class="text-5xl mb-4">⏰</div>
+    <div class="text-2xl font-bold">Months</div>
+    <div>of manual work avoided</div>
+  </div>
+  
+  <div class="border-2 rounded-lg p-6 text-center">
+    <div class="text-5xl mb-4">🗑️</div>
+    <div class="text-xl">Blocks deleted:</div>
+    <div class="text-sm mt-2">~~OCR~~<br/>~~Gibberish Detector~~</div>
+  </div>
+</div>
 
 ---
 layout: center
@@ -431,11 +445,16 @@ layout: default
 
 **Gemini only worked because:**
 
-✓ Data could leave my environment
+<div class="space-y-4 mt-8">
+  <p class="text-2xl">✓ Data could leave my environment</p>
+  <p class="text-2xl">✓ 35,000 documents, most with no attachments = small enough for the budget</p>
+</div>
 
-✓ 35,000 documents, most with no attachments = small enough for the budget
-
-**Different constraints = Different solution**
+<div class="mt-12 text-center">
+  <p class="text-3xl font-bold border-2 p-6 rounded-lg inline-block">
+    Different constraints = Different solution
+  </p>
+</div>
 
 ---
 layout: section
@@ -491,14 +510,10 @@ layout: two-cols
 
 # Working With Teams
 
-### Define Your Data Contract
-Everyone needs to agree on formats
 
-### Lock Down Field Names
-Changes break downstream systems
+* Lock Down Field Names and Formats
+* Validate Everything
 
-### Validate Everything
-Don't trust, verify
 
 ::right::
 
@@ -599,10 +614,31 @@ layout: default
 
 **For production systems, add a fourth step:**
 
-- 🏷️ **Natural labeling** - Ground truth emerges over time
-- 📊 **Performance tracking** - Know when models drift  
-- 🎯 **Strategic sampling** - Human review of edge cases
-- 🚨 **Failure alerts** - Catch problems early
+<div class="grid grid-cols-2 gap-4 mt-6">
+  <div class="border rounded p-4">
+    <div class="text-3xl mb-2">🏷️</div>
+    <div class="font-bold">Natural labeling</div>
+    <div class="text-sm">Ground truth emerges over time</div>
+  </div>
+  
+  <div class="border rounded p-4">
+    <div class="text-3xl mb-2">📊</div>
+    <div class="font-bold">Performance tracking</div>
+    <div class="text-sm">Know when models drift</div>
+  </div>
+  
+  <div class="border rounded p-4">
+    <div class="text-3xl mb-2">🎯</div>
+    <div class="font-bold">Strategic sampling</div>
+    <div class="text-sm">Human review of edge cases</div>
+  </div>
+  
+  <div class="border rounded p-4">
+    <div class="text-3xl mb-2">🚨</div>
+    <div class="font-bold">Failure alerts</div>
+    <div class="text-sm">Catch problems early</div>
+  </div>
+</div>
 
 ---
 layout: section
@@ -627,11 +663,25 @@ layout: default
 
 # The Real Win
 
-🔧 → 🏭
+<div class="flex items-center justify-center gap-8 mt-16">
+  <div class="text-center">
+    <div class="text-8xl mb-4">🔧</div>
+    <div class="text-xl">One-off script</div>
+  </div>
+  
+  <div class="text-6xl">→</div>
+  
+  <div class="text-center">
+    <div class="text-8xl mb-4">🏭</div>
+    <div class="text-xl">Reusable pipeline</div>
+  </div>
+</div>
 
-**One-off script → Reusable pipeline**
-
-**Next project? Hours.**
+<div class="mt-16 text-center">
+  <div class="text-4xl font-bold border-4 p-6 rounded-lg inline-block">
+    Next project? Hours. ⚡
+  </div>
+</div>
 
 ---
 layout: center
