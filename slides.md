@@ -69,9 +69,11 @@ layout: two-cols
 
 # The Weird Stuff
 
-- **Dark scanned PDFs**
-- **Random meme attachments**  
-- **Blurry photos of handwritten notes**
+<div class="space-y-8 font-semibold">
+  <p>📄 Dark scanned PDFs</p>
+  <p>🎭 Random meme attachments</p>
+  <p>📸 Blurry photos of handwritten notes</p>
+</div>
 
 ::right::
 
@@ -726,27 +728,27 @@ pre {
 
 /* Standardized slide layouts - LARGER for back of room */
 .slidev-layout {
-  font-size: 28px !important;
+  font-size: 36px !important;
   line-height: 1.6;
 }
 
 .slidev-layout h1 {
   @apply font-bold mb-8;
-  font-size: 56px !important;
+  font-size: 72px !important;
 }
 
 .slidev-layout h2 {
   @apply font-bold mb-6;
-  font-size: 48px !important;
+  font-size: 56px !important;
 }
 
 .slidev-layout h3 {
   @apply font-bold mb-4;
-  font-size: 36px !important;
+  font-size: 44px !important;
 }
 
 .slidev-layout p, .slidev-layout li {
-  font-size: 28px !important;
+  font-size: 36px !important;
   line-height: 1.8;
 }
 
