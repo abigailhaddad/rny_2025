@@ -761,6 +761,48 @@ pre {
   @apply text-gray-500;
 }
 
+/* Standardized text size classes */
+.text-standard {
+  font-size: 36px !important;
+}
+
+.text-standard-small {
+  font-size: 32px !important;
+}
+
+.text-standard-large {
+  font-size: 44px !important;
+}
+
+.text-standard-xl {
+  font-size: 52px !important;
+}
+
+/* Override Tailwind's tiny text classes */
+.slidev-layout .text-sm {
+  font-size: 32px !important;
+}
+
+.slidev-layout .text-lg {
+  font-size: 40px !important;
+}
+
+.slidev-layout .text-xl {
+  font-size: 44px !important;
+}
+
+.slidev-layout .text-2xl {
+  font-size: 48px !important;
+}
+
+.slidev-layout .text-3xl {
+  font-size: 52px !important;
+}
+
+.slidev-layout .text-4xl {
+  font-size: 56px !important;
+}
+
 .slide-content {
   @apply mt-8;
 }
