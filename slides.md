@@ -1,5 +1,5 @@
 ---
-theme: seriph
+theme: penguin
 background: https://source.unsplash.com/collection/94734566/1920x1080
 class: text-center
 highlighter: shiki
@@ -24,14 +24,6 @@ export:
 ## A Practical Workflow
 
 **Abigail Haddad**
-
-<style>
-.slidev-layout h1 {
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-</style>
 
 ---
 layout: section
@@ -700,111 +692,7 @@ class: text-center
 </div>
 
 <style>
-/* Custom animations */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Better code blocks */
-pre {
-  @apply bg-gray-100 p-4 rounded-lg overflow-x-auto;
-}
-
-/* Gradient backgrounds for sections */
-.slidev-layout.section {
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-  color: white;
-}
-
-.slidev-layout.section h1 {
-  color: white !important;
-}
-
-/* SIMPLE SIZING SYSTEM - Change these values to resize everything */
-:root {
-  --text-base: 44px;      /* Normal text */
-  --text-large: 56px;     /* Emphasized text */
-  --text-huge: 72px;      /* Big statements */
-  --h1-size: 72px;        /* Main headings */
-  --h2-size: 56px;        /* Section headings */
-  --h3-size: 48px;        /* Subheadings */
-}
-
-/* Apply base font size to everything */
-.slidev-layout {
-  font-size: var(--text-base) !important;
-  line-height: 1.6;
-  color: #1a202c; /* Dark gray default */
-}
-
-/* Headings */
-.slidev-layout h1 {
-  font-size: var(--h1-size) !important;
-  @apply font-bold mb-8;
-}
-
-.slidev-layout h2 {
-  font-size: var(--h2-size) !important;
-  @apply font-bold mb-6;
-}
-
-.slidev-layout h3 {
-  font-size: var(--h3-size) !important;
-  @apply font-bold mb-4;
-}
-
-/* All text elements default to base size */
-.slidev-layout p,
-.slidev-layout li,
-.slidev-layout div,
-.slidev-layout span {
-  font-size: inherit;
-  line-height: 1.8;
-}
-
-/* Override ALL Tailwind text sizes to our 3 sizes */
-.slidev-layout .text-xs,
-.slidev-layout .text-sm,
-.slidev-layout .text-base,
-.slidev-layout .text-lg,
-.slidev-layout .text-xl,
-.slidev-layout .text-2xl {
-  font-size: var(--text-base) !important;
-}
-
-.slidev-layout .text-3xl,
-.slidev-layout .text-4xl {
-  font-size: var(--text-large) !important;
-}
-
-.slidev-layout .text-5xl,
-.slidev-layout .text-6xl {
-  font-size: var(--text-huge) !important;
-}
-
-/* Remove all gray text colors - use default dark */
-.slidev-layout .text-gray-100,
-.slidev-layout .text-gray-200,
-.slidev-layout .text-gray-300,
-.slidev-layout .text-gray-400,
-.slidev-layout .text-gray-500,
-.slidev-layout .text-gray-600,
-.slidev-layout .text-gray-700,
-.slidev-layout .text-gray-800,
-.slidev-layout .text-gray-900 {
-  color: #1a202c !important;
-}
-
-.slide-content {
-  @apply mt-8;
-}
-
+/* Keep only the image sizing that works */
 .slide-image {
   @apply mx-auto my-6 max-h-64 object-contain;
 }
