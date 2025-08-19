@@ -39,9 +39,8 @@ layout: default
 
 <div class="flex flex-col items-center justify-center">
   <img src="/images/hourglass.png" class="w-95 h-95" />
+35K comments
 </div>
-
-**35K comments**
 
 ---
 layout: default
@@ -154,7 +153,9 @@ layout: default
 ⏰ Avoided: months of manual work
 
 Two blocks deleted:
+
 ~~OCR~~
+
 ~~Gibberish Detector~~
 
 ---
@@ -330,19 +331,29 @@ layout: center
 
 # Your Equation
 
-Your documents
-
-+
-
-Your goals
-
-+
-
-Your constraints
-
-=
-
-**Your solution**
+<div class="flex items-center justify-center gap-4 mt-12">
+  <div class="border-2 p-6 rounded">
+    Documents
+  </div>
+  
+  <div class="text-2xl">+</div>
+  
+  <div class="border-2 p-6 rounded">
+    Goals
+  </div>
+  
+  <div class="text-2xl">+</div>
+  
+  <div class="border-2 p-6 rounded">
+    Constraints
+  </div>
+  
+  <div class="text-2xl">=</div>
+  
+  <div class="border-4 p-6 rounded font-bold">
+    Your Solution
+  </div>
+</div>
 
 ---
 layout: center
@@ -350,7 +361,13 @@ layout: center
 
 # Should I Throw It Into an LLM?
 
-**MAYBE!!!**
+---
+layout: center
+---
+
+<div class="text-6xl font-bold text-center">
+  🤔 MAYBE!!! 🎲
+</div>
 
 ---
 layout: default
@@ -359,7 +376,7 @@ layout: default
 # Four Factors to Consider
 
 <div class="grid grid-cols-2 gap-8 mt-8">
-  <div class="bg-blue-100 p-6 rounded-lg">
+  <div class="border-2 p-6 rounded-lg">
     <h3 class="text-xl mb-4 font-bold">🎯 Accuracy</h3>
     <ul class="space-y-2">
       <li>How good is good enough?</li>
@@ -367,7 +384,7 @@ layout: default
     </ul>
   </div>
   
-  <div class="bg-green-100 p-6 rounded-lg">
+  <div class="border-2 p-6 rounded-lg">
     <h3 class="text-xl mb-4 font-bold">🔍 Transparency</h3>
     <ul class="space-y-2">
       <li>Need deterministic output?</li>
@@ -375,7 +392,7 @@ layout: default
     </ul>
   </div>
   
-  <div class="bg-orange-100 p-6 rounded-lg">
+  <div class="border-2 p-6 rounded-lg">
     <h3 class="text-xl mb-4 font-bold">💰 Resources</h3>
     <ul class="space-y-2">
       <li>Can data leave your servers?</li>
@@ -383,7 +400,7 @@ layout: default
     </ul>
   </div>
   
-  <div class="bg-purple-100 p-6 rounded-lg">
+  <div class="border-2 p-6 rounded-lg">
     <h3 class="text-xl mb-4 font-bold">⏰ Timeline</h3>
     <ul class="space-y-2">
       <li>Single batch or production?</li>
@@ -496,7 +513,7 @@ layout: default
 # Enforce Structured Output
 
 <div class="grid grid-cols-2 gap-8 mt-8">
-<div class="bg-red-100 p-10 rounded-lg">
+<div class="bg-red-100 p-10 rounded-lg text-red-900">
 
 ### ❌ Don't:
 
@@ -508,7 +525,7 @@ layout: default
 ```
 
 </div>
-<div class="bg-green-100 p-10 rounded-lg">
+<div class="bg-green-100 p-10 rounded-lg text-green-900">
 
 ### ✅ Do:
 
@@ -533,15 +550,25 @@ layout: default
 
 # Systematic Evaluation
 
-### 📝 Build test sets:
-- Real examples from your data
-- The weird edge cases
-- What failed before
+<div class="grid grid-cols-2 gap-8 mt-6">
+  <div class="space-y-4">
+    <h3 class="text-lg font-bold">📝 Build test sets:</h3>
+    <ul class="text-sm space-y-1">
+      <li>Real examples from your data</li>
+      <li>The weird edge cases</li>
+      <li>What failed before</li>
+    </ul>
+  </div>
 
-### 🎯 Test what matters:
-- Accuracy on YOUR data
-- How it fails (not just how often)
-- **What keeps me up at night?**
+  <div class="space-y-4">
+    <h3 class="text-lg font-bold">🎯 Test what matters:</h3>
+    <ul class="text-sm space-y-1">
+      <li>Accuracy on YOUR data</li>
+      <li>How it fails (not just how often)</li>
+      <li class="text-orange-500 font-bold">What keeps me up at night?</li>
+    </ul>
+  </div>
+</div>
 
 ---
 layout: two-cols
