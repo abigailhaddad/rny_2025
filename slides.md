@@ -29,7 +29,21 @@ export:
 layout: section
 ---
 
-# Part 1: A Deadline
+# Part 1: The Project
+
+<!--
+In May, I left my job. And I wanted to do a project that was both useful and showcased the kind of work I'd been doing.
+-->
+
+---
+layout: default
+---
+
+# Comments Analysis
+
+<div class="flex flex-col items-center justify-center">
+  <img src="/images/regulations.jpg" style="width: 90%; height: auto;" />
+</div>
 
 ---
 layout: default
@@ -177,10 +191,10 @@ layout: center
 ---
 
 # Here It Is
-
+  
 
 <div class="flex flex-col items-center justify-center">
-<img src="/images/comment_site.jpg" class="w-100 h-100" />
+  <img src="/images/comment_site.jpg" style="width: 70%; height: auto;" />
 </div>
 
 ---
@@ -283,37 +297,35 @@ layout: section
 layout: default
 ---
 
-# What Are You Trying to Do?
+# 📄 Your Documents
 
-<div class="grid grid-cols-2 gap-16 mt-12">
-  <div>
-    <h2 class="font-bold mb-8">📄 Your Documents</h2>
-    <div class="space-y-6">
-      <p>✓ Clean PDFs?</p>
-      <p>✓ Scanned images?</p>
-      <p>✓ Mixed formats?</p>
-      <p>✓ Handwritten?</p>
-    </div>
-  </div>
-  
-  <div>
-    <h2 class="font-bold mb-8">🎯 Your Goals</h2>
-    <div class="space-y-6">
-      <p>→ Extract fields?</p>
-      <p>→ Classify docs?</p>
-      <p>→ Summarize?</p>
-      <p>→ Find patterns?</p>
-    </div>
-  </div>
+<div class="space-y-6 mt-12 text-2xl">
+  <p>✓ Clean PDFs?</p>
+  <p>✓ Scanned images?</p>
+  <p>✓ Mixed formats?</p>
+  <p>✓ Handwritten?</p>
 </div>
 
 ---
 layout: default
 ---
 
-# Don't Forget Your Constraints
+# 🎯 Your Goals
 
-<div class="grid grid-cols-2 gap-8 mt-12">
+<div class="space-y-6 mt-12 text-2xl">
+  <p>→ Extract fields?</p>
+  <p>→ Classify docs?</p>
+  <p>→ Summarize?</p>
+  <p>→ Find patterns?</p>
+</div>
+
+---
+layout: default
+---
+
+# Your Constraints
+
+<div class="grid grid-cols-2 gap-4 mt-10">
   <div class="text-center p-8">
     <div class="text-6xl mb-4">🔒</div>
     <h3 class="text-3xl font-bold">Privacy</h3>
@@ -343,36 +355,6 @@ layout: default
 layout: center
 ---
 
-# Your Equation
-
-<div class="flex items-center justify-center gap-4 mt-12">
-  <div class="border-2 p-6 rounded">
-    Documents
-  </div>
-  
-  <div class="text-2xl">+</div>
-  
-  <div class="border-2 p-6 rounded">
-    Goals
-  </div>
-  
-  <div class="text-2xl">+</div>
-  
-  <div class="border-2 p-6 rounded">
-    Constraints
-  </div>
-  
-  <div class="text-2xl">=</div>
-  
-  <div class="border-4 p-6 rounded font-bold">
-    Your Solution
-  </div>
-</div>
-
----
-layout: center
----
-
 # Should I Throw It Into an LLM?
 
 ---
@@ -387,55 +369,37 @@ layout: center
 layout: default
 ---
 
-# Four Factors to Consider
+# Your Toolkit
 
-<div class="grid grid-cols-2 gap-8 mt-8">
-  <div class="border-2 p-6 rounded-lg">
-    <h3 class="text-xl mb-4 font-bold">🎯 Accuracy</h3>
-    <ul class="space-y-2">
-      <li>How good is good enough?</li>
-      <li>How does it fail?</li>
+<div class="grid grid-cols-3 gap-6 mt-8">
+  <div class="border rounded p-4">
+    <h3 class="font-bold text-xl mb-3">GET</h3>
+    <ul class="text-sm space-y-1">
+      <li>PyPDF2, pdfplumber</li>
+      <li>Tesseract OCR</li>
+      <li>BeautifulSoup</li>
+      <li>APIs</li>
     </ul>
   </div>
   
-  <div class="border-2 p-6 rounded-lg">
-    <h3 class="text-xl mb-4 font-bold">🔍 Transparency</h3>
-    <ul class="space-y-2">
-      <li>Need deterministic output?</li>
-      <li>Must explain decisions?</li>
+  <div class="border rounded p-4">
+    <h3 class="font-bold text-xl mb-3">PROCESS</h3>
+    <ul class="text-sm space-y-1">
+      <li>OpenAI, Claude, Gemini</li>
+      <li>BERT</li>
+      <li>Regex</li>
     </ul>
   </div>
   
-  <div class="border-2 p-6 rounded-lg">
-    <h3 class="text-xl mb-4 font-bold">💰 Resources</h3>
-    <ul class="space-y-2">
-      <li>Can data leave your servers?</li>
-      <li>API costs acceptable?</li>
-    </ul>
-  </div>
-  
-  <div class="border-2 p-6 rounded-lg">
-    <h3 class="text-xl mb-4 font-bold">⏰ Timeline</h3>
-    <ul class="space-y-2">
-      <li>Single batch or production?</li>
-      <li>Who monitors failures?</li>
+  <div class="border rounded p-4">
+    <h3 class="font-bold text-xl mb-3">DO</h3>
+    <ul class="text-sm space-y-1">
+      <li>Quarto</li>
+      <li>Email/Slack alerts</li>
+      <li>API endpoints</li>
     </ul>
   </div>
 </div>
-
----
-layout: default
----
-
-# When to Use What
-
-| **📏 Rule-based** | **🤖 Smaller Models** | **🧠 LLMs** |
-|---|---|---|
-| Regex, keywords | BERT, spaCy | GPT-4, Claude |
-| ✓ Simple patterns | ✓ Run locally | ✓ Complex tasks |
-| ✓ Explainable | ✓ Single purpose | ✓ Flexible |
-
-**Mix and match based on your needs**
 
 ---
 layout: default
