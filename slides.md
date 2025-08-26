@@ -18,6 +18,7 @@ export:
   format: pdf
   timeout: 30000
   withClicks: false
+  dark: true
 ---
 
 # Processing Document Collections with LLMs
@@ -26,20 +27,71 @@ export:
 **Abigail Haddad**
 
 ---
-layout: section
+layout: default
 ---
 
-# Part 1: The Project
+# Every Organization Has Documents
+## (and the same questions about all of them)
 
-<!--
-In May, I left my job. And I wanted to do a project that was both useful and showcased the kind of work I'd been doing.
--->
+<div class="grid grid-cols-3 gap-8 mt-12">
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">🏥</div>
+    <p class="text-2xl font-semibold">Medical Records</p>
+  </div>
+  
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">👤</div>
+    <p class="text-2xl font-semibold">Resumes</p>
+  </div>
+  
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">💬</div>
+    <p class="text-2xl font-semibold">Customer Complaints</p>
+  </div>
+  
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">⚠️</div>
+    <p class="text-2xl font-semibold">Error Logs</p>
+  </div>
+  
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">📄</div>
+    <p class="text-2xl font-semibold">Contracts</p>
+  </div>
+  
+  <div class="text-center p-6">
+    <div class="text-7xl mb-4">📊</div>
+    <p class="text-2xl font-semibold">Reports</p>
+  </div>
+</div>
 
 ---
 layout: default
 ---
 
-# Comments Analysis
+# Agenda
+
+<div class="text-2xl space-y-6 mt-12">
+  <p>📌 <strong>Part 1:</strong> The Project - Processing Regulations.gov Comments</p>
+  <p>📌 <strong>Part 2:</strong> The Larger Problem - Document Processing Everywhere</p>
+  <p>📌 <strong>Part 3:</strong> Applying This Pattern - Your Documents, Your Tools</p>
+  <p>📌 <strong>Part 4:</strong> What I Learned - Keep It Simple</p>
+  <p>📌 <strong>Part 5:</strong> Evaluation - Test What Matters</p>
+  <p>📌 <strong>Part 6:</strong> Building A Couple More Blocks - From Script to Product</p>
+</div>
+
+---
+layout: section
+---
+
+# Part 1: The Project
+
+
+---
+layout: default
+---
+
+# Regulations.gov Comments
 
 <div class="flex flex-col items-center justify-center">
   <img src="/images/regulations.jpg" style="width: 90%; height: auto;" />
@@ -49,11 +101,28 @@ layout: default
 layout: default
 ---
 
-# My Self-Imposed Deadline
+# What Did the Comments Say?
+
+<div class="grid grid-cols-2 gap-12 mt-16">
+  <div class="bg-green-100 border-4 border-green-500 rounded-lg p-12 text-center">
+    <div class="text-6xl font-bold text-green-700">AGREE</div>
+    <div class="text-8xl mt-4 text-green-700">✓</div>
+  </div>
+  
+  <div class="bg-red-100 border-4 border-red-500 rounded-lg p-12 text-center">
+    <div class="text-6xl font-bold text-red-700">DISAGREE</div>
+    <div class="text-8xl mt-4 text-red-700">✗</div>
+  </div>
+</div>
+
+---
+layout: default
+---
+
+# My Deadline
 
 <div class="flex flex-col items-center justify-center">
   <img src="/images/hourglass.png" class="w-95 h-95" />
-35K comments
 </div>
 
 ---
@@ -158,32 +227,30 @@ layout: center
 layout: default
 ---
 
-# The Result
+# The Results
 
-<div class="grid grid-cols-2 gap-6 mt-8">
-  <div class="border-2 rounded-lg p-6 text-center">
-    <div class="text-5xl mb-4">✅</div>
-    <div class="text-2xl font-bold">35,000</div>
-    <div>comments processed</div>
+<div class="grid grid-cols-3 gap-8 mt-12 text-center">
+  <div class="border-2 rounded-lg p-6">
+    <div class="text-6xl font-bold">33,647</div>
+    <div class="text-2xl">Against</div>
+    <div class="text-gray-500">(94%)</div>
   </div>
   
-  <div class="border-2 rounded-lg p-6 text-center">
-    <div class="text-5xl mb-4">🚀</div>
-    <div class="text-2xl font-bold">Days</div>
-    <div>to launch website</div>
+  <div class="border-2 rounded-lg p-6">
+    <div class="text-6xl font-bold">1,596</div>
+    <div class="text-2xl">Support</div>
+    <div class="text-gray-500">(4.5%)</div>
   </div>
   
-  <div class="border-2 rounded-lg p-6 text-center">
-    <div class="text-5xl mb-4">⏰</div>
-    <div class="text-2xl font-bold">Months</div>
-    <div>of manual work avoided</div>
+  <div class="border-2 rounded-lg p-6">
+    <div class="text-6xl font-bold">306</div>
+    <div class="text-2xl">Neutral</div>
+    <div class="text-gray-500">(0.9%)</div>
   </div>
-  
-  <div class="border-2 rounded-lg p-6 text-center">
-    <div class="text-5xl mb-4">🗑️</div>
-    <div class="text-xl">Blocks deleted:</div>
-    <div class="text-sm mt-2">~~OCR~~<br/>~~Gibberish Detector~~</div>
-  </div>
+</div>
+
+<div class="mt-8 text-center text-xl">
+  Many "support" comments were duplicates/campaigns
 </div>
 
 ---
@@ -201,14 +268,13 @@ layout: center
 layout: section
 ---
 
-# Part 2: A Step Back
-## The Text Data Pipeline
+# Part 2: The Larger Problem
 
 ---
 layout: default
 ---
 
-# Every Organization Has These
+# Every Organization Has Documents
 
 <div class="grid grid-cols-3 gap-8 mt-12">
   <div class="text-center p-6">
@@ -246,15 +312,12 @@ layout: default
 layout: default
 ---
 
-# Not RAG: Same Questions Each Time
+# Same Question Every Time
 
-**"Is this fraudulent?"**
-
-**"Should we interview them?"**
-
-**"What's the main complaint?"**
-
-**⏰ Time is the only barrier**
+- Is this fraudulent? → **yes/no**
+- What's the complaint about? → **category**
+- Does this candidate qualify? → **yes/no + reason**
+- What's the root cause? → **specific issue**
 
 ---
 layout: center
@@ -288,10 +351,54 @@ Create visualizations, populate templates, or trigger actions
 </div>
 
 ---
+layout: default
+---
+
+# Getting Back ONLY "Agree" or "Disagree"
+
+<div class="flex flex-col items-center justify-center">
+  <img src="/images/enumblock.png" style="width: 30%; height: auto;" />
+</div>
+
+**Enums → Structured output → Wrangleable results**
+
+---
+layout: default
+---
+
+# LiteLLM Structured Output + Pydantic
+
+<div class="flex flex-col items-center justify-center">
+  <img src="/images/structured output.jpg" style="width: 60%; height: auto;" />
+</div>
+
+---
+layout: default
+---
+
+# Put Anything You Want in The Prompt
+
+<div class="flex flex-col items-center justify-center">
+  <img src="/images/longprompt.jpg" style="width: 80%; height: auto;" />
+</div>
+
+---
+layout: default
+---
+
+# What I Actually Extracted
+
+- **Stance**: agree / disagree / neutral-other
+- **Themes**: multi-class classification
+- **Summary**: unstructured text
+- **Representative quote**: actual text
+- **Reasoning**: why this classification
+
+---
 layout: section
 ---
 
-# Part 3: How to Get Started
+# Part 3: Applying This Pattern
 
 ---
 layout: default
@@ -424,7 +531,18 @@ layout: default
 layout: section
 ---
 
-# Part 4: Real World Lessons
+# Part 4: What I Learned
+
+---
+layout: center
+---
+
+# Start Simple
+
+<div class="flex flex-col items-center justify-center">
+<img src="/images/get process do blocks.png" class="w-80 h-80" />
+</div>
+  Build only the blocks you need
 
 ---
 layout: default
@@ -436,15 +554,12 @@ layout: default
 <div class="flex flex-col items-center justify-center">
 <img src="/images/too many blocks.png" class="w-70 h-70" />
 </div>
-Each use case needs **different blocks**
-
-What works for one project **won't work for the next**
 
 ---
 layout: default
 ---
 
-# Scaling Up: Key Lessons
+# Scaling Up
 
 <div class="grid grid-cols-2 gap-12 mt-16">
   <div class="text-center">
@@ -466,55 +581,6 @@ layout: default
     <div class="text-8xl mb-6">🗄️</div>
     <h3 class="text-3xl font-bold">Real Databases</h3>
   </div>
-</div>
-
----
-layout: two-cols
----
-
-# Working With Teams
-
-
-* Lock Down Field Names and Formats
-* Validate Everything
-
-
-::right::
-
-<div class="flex items-center justify-center h-full">
-  <img src="/images/schema.png" />
-</div>
-
----
-layout: default
----
-
-# Enforce Structured Output
-
-<div class="grid grid-cols-2 gap-8 mt-8">
-<div class="bg-red-100 p-10 rounded-lg text-red-900">
-
-### ❌ Don't:
-
-```python
-"Please only respond with 
-'support' or 'oppose'"
-
-# Hope it listens...
-```
-
-</div>
-<div class="bg-green-100 p-10 rounded-lg text-green-900">
-
-### ✅ Do:
-
-```python
-class StanceEnum(str, Enum):
-    support = 'support'
-    oppose = 'oppose'
-```
-
-</div>
 </div>
 
 ---
@@ -555,96 +621,85 @@ layout: two-cols
 
 # Make Iteration Painless
 
-Build modularity into your processing layer:
-
-- Swap models without changing code
-- Test multiple prompts in parallel
-- Compare results side-by-side
-- Grid search across configurations
-
-**Modular design enables rapid experimentation**
-
-::right::
-
-<div class="flex items-center justify-center h-full">
+<div class="flex flex-col items-center justify-center">
   <img src="/images/make iteration painless.png" />
-</div>
-
----
-layout: default
----
-
-# Production Monitoring
-
-**For production systems, add a fourth step:**
-
-<div class="grid grid-cols-2 gap-4 mt-6">
-  <div class="border rounded p-4">
-    <div class="text-3xl mb-2">🏷️</div>
-    <div class="font-bold">Natural labeling</div>
-    <div class="text-sm">Ground truth emerges over time</div>
-  </div>
-  
-  <div class="border rounded p-4">
-    <div class="text-3xl mb-2">📊</div>
-    <div class="font-bold">Performance tracking</div>
-    <div class="text-sm">Know when models drift</div>
-  </div>
-  
-  <div class="border rounded p-4">
-    <div class="text-3xl mb-2">🎯</div>
-    <div class="font-bold">Strategic sampling</div>
-    <div class="text-sm">Human review of edge cases</div>
-  </div>
-  
-  <div class="border rounded p-4">
-    <div class="text-3xl mb-2">🚨</div>
-    <div class="font-bold">Failure alerts</div>
-    <div class="text-sm">Catch problems early</div>
-  </div>
 </div>
 
 ---
 layout: section
 ---
 
-# Part 6: Conclusion
-
----
-layout: center
----
-
-# Start Simple
-
-<div class="flex flex-col items-center justify-center">
-<img src="/images/get process do blocks.png" class="w-80 h-80" />
-</div>
-  Build only the blocks you need
+# Part 6: Building A Couple More Blocks
 
 ---
 layout: default
 ---
 
-# The Real Win
+# From One-Off Script to Product
 
 <div class="flex items-center justify-center gap-8 mt-16">
   <div class="text-center">
-    <div class="text-8xl mb-4">🔧</div>
-    <div class="text-xl">One-off script</div>
+    <div class="text-6xl mb-4">📝</div>
+    <div class="text-2xl font-bold">Manual Analysis</div>
+    <div class="text-xl mt-2">One regulation</div>
+    <div class="text-xl">35K comments</div>
   </div>
   
   <div class="text-6xl">→</div>
   
   <div class="text-center">
-    <div class="text-8xl mb-4">🏭</div>
-    <div class="text-xl">Reusable pipeline</div>
+    <div class="text-6xl mb-4">🤖</div>
+    <div class="text-2xl font-bold">Automated Tool</div>
+    <div class="text-xl mt-2">Any public comment dataset</div>
+    <div class="text-xl">Finds patterns, writes prompts</div>
   </div>
 </div>
 
-<div class="mt-16 text-center">
-  <div class="text-4xl font-bold border-4 p-6 rounded-lg inline-block">
-    Next project? Hours. ⚡
+---
+layout: center
+---
+
+# I Built A Couple More Blocks
+
+<div class="flex flex-col items-center justify-center">
+  <img src="/images/enum website gui.png" style="width: 50%; height: auto;" />
+</div>
+
+---
+layout: default
+---
+
+# How It Works
+
+1. **Upload** sample comments
+2. **It discovers** the arguments  
+3. **It writes** the classification prompts
+4. **Fully autonomous** analysis
+
+**Structured output/Enum is still doing the work here**
+
+---
+layout: default
+---
+
+# New Analyis!
+
+<div class="flex flex-col items-center justify-center">
+  <img src="/images/website.jpg" style="width: 80%; height: auto;" />
+</div>
+
+---
+layout: center
+---
+
+<div class="text-center mt-16">
+  <div class="text-6xl mb-8">🚀</div>
+  
+  <div class="text-3xl font-bold mb-4">
+    I did demo this last week for a job interview
   </div>
+  
+
 </div>
 
 ---
@@ -652,11 +707,21 @@ layout: center
 class: text-center
 ---
 
-# Contact Me
+# Find Me on the Internet!
 
-🔗 <a href="https://github.com/abigailhaddad" class="text-blue-600">github.com/abigailhaddad</a>
+🌐 <a href="https://abigailhaddad.netlify.app/" class="text-blue-600 text-3xl">abigailhaddad.netlify.app</a>
 
-📝 <a href="https://presentofcoding.substack.com" class="text-blue-600">presentofcoding.substack.com</a>
+<div class="mt-12 text-2xl">
+  <p class="font-bold mb-4">Want to hire me to consult?</p>
+  <p>Fill out the form on my website!</p>
+</div>
+
+<div class="mt-8 text-xl">
+  <p>Also find me on:</p>
+  <p>🔗 <a href="https://github.com/abigailhaddad" class="text-blue-600">github.com/abigailhaddad</a></p>
+  <p>📝 <a href="https://presentofcoding.substack.com" class="text-blue-600">presentofcoding.substack.com</a></p>
+  <p>💻 <a href="https://github.com/abigailhaddad/lander_talk" class="text-blue-600">github.com/abigailhaddad/lander_talk</a> (this presentation)</p>
+</div>
 
 <style>
 /* Keep only the image sizing that works */
