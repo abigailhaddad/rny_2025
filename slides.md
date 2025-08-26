@@ -71,13 +71,13 @@ layout: default
 
 # Agenda
 
-<div class="text-2xl space-y-6 mt-12">
-  <p>📌 <strong>Part 1:</strong> The Project - Processing Regulations.gov Comments</p>
-  <p>📌 <strong>Part 2:</strong> The Larger Problem - Document Processing Everywhere</p>
-  <p>📌 <strong>Part 3:</strong> Applying This Pattern - Your Documents, Your Tools</p>
-  <p>📌 <strong>Part 4:</strong> What I Learned - Keep It Simple</p>
-  <p>📌 <strong>Part 5:</strong> Evaluation - Test What Matters</p>
-  <p>📌 <strong>Part 6:</strong> Building A Couple More Blocks - From Script to Product</p>
+<div class="text-3xl space-y-6 mt-12">
+  <p>📌 The Project</p>
+  <p>📌 The Larger Problem</p>
+  <p>📌 Applying This Pattern</p>
+  <p>📌 What I Learned</p>
+  <p>📌 Evaluation</p>
+  <p>📌 Building A Couple More Blocks</p>
 </div>
 
 ---
@@ -476,6 +476,25 @@ layout: center
 layout: default
 ---
 
+# Remember My Seven Cents?
+
+**Gemini only worked because:**
+
+<div class="space-y-4 mt-8">
+  <p class="text-2xl">✓ Data could leave my environment</p>
+  <p class="text-2xl">✓ 35,000 documents, most with no attachments = small enough for the budget</p>
+</div>
+
+<div class="mt-12 text-center">
+  <p class="text-3xl font-bold border-2 p-6 rounded-lg inline-block">
+    Different constraints = Different solution
+  </p>
+</div>
+
+---
+layout: default
+---
+
 # Your Toolkit
 
 <div class="grid grid-cols-3 gap-6 mt-8">
@@ -506,25 +525,6 @@ layout: default
       <li>API endpoints</li>
     </ul>
   </div>
-</div>
-
----
-layout: default
----
-
-# Remember My Seven Cents?
-
-**Gemini only worked because:**
-
-<div class="space-y-4 mt-8">
-  <p class="text-2xl">✓ Data could leave my environment</p>
-  <p class="text-2xl">✓ 35,000 documents, most with no attachments = small enough for the budget</p>
-</div>
-
-<div class="mt-12 text-center">
-  <p class="text-3xl font-bold border-2 p-6 rounded-lg inline-block">
-    Different constraints = Different solution
-  </p>
 </div>
 
 ---
@@ -637,21 +637,22 @@ layout: default
 
 # From One-Off Script to Product
 
-<div class="flex items-center justify-center gap-8 mt-16">
-  <div class="text-center">
-    <div class="text-6xl mb-4">📝</div>
-    <div class="text-2xl font-bold">Manual Analysis</div>
-    <div class="text-xl mt-2">One regulation</div>
-    <div class="text-xl">35K comments</div>
+<div class="text-center mt-12">
+  <div class="text-2xl mb-8">
+    <span class="text-6xl">📝</span> → <span class="text-6xl">🤖</span>
   </div>
   
-  <div class="text-6xl">→</div>
+  <p class="text-3xl font-bold mb-6">Built an automated tool that:</p>
   
-  <div class="text-center">
-    <div class="text-6xl mb-4">🤖</div>
-    <div class="text-2xl font-bold">Automated Tool</div>
-    <div class="text-xl mt-2">Any public comment dataset</div>
-    <div class="text-xl">Finds patterns, writes prompts</div>
+  <div class="text-2xl space-y-3">
+    <p>✓ Takes any public comment dataset</p>
+    <p>✓ Discovers the arguments automatically</p>
+    <p>✓ Writes its own classification prompts</p>
+    <p>✓ Runs fully autonomous analysis</p>
+  </div>
+  
+  <div class="mt-10 text-xl italic text-gray-600">
+    Structured output/Enum is still the secret sauce
   </div>
 </div>
 
@@ -669,37 +670,10 @@ layout: center
 layout: default
 ---
 
-# How It Works
-
-1. **Upload** sample comments
-2. **It discovers** the arguments  
-3. **It writes** the classification prompts
-4. **Fully autonomous** analysis
-
-**Structured output/Enum is still doing the work here**
-
----
-layout: default
----
-
 # New Analyis!
 
 <div class="flex flex-col items-center justify-center">
   <img src="/images/website.jpg" style="width: 80%; height: auto;" />
-</div>
-
----
-layout: center
----
-
-<div class="text-center mt-16">
-  <div class="text-6xl mb-8">🚀</div>
-  
-  <div class="text-3xl font-bold mb-4">
-    I did demo this last week for a job interview
-  </div>
-  
-
 </div>
 
 ---
@@ -720,7 +694,7 @@ class: text-center
   <p>Also find me on:</p>
   <p>🔗 <a href="https://github.com/abigailhaddad" class="text-blue-600">github.com/abigailhaddad</a></p>
   <p>📝 <a href="https://presentofcoding.substack.com" class="text-blue-600">presentofcoding.substack.com</a></p>
-  <p>💻 <a href="https://github.com/abigailhaddad/lander_talk" class="text-blue-600">github.com/abigailhaddad/lander_talk</a> (this presentation)</p>
+  <p>💻 <a href="https://github.com/abigailhaddad/rny_2025" class="text-blue-600">github.com/abigailhaddad/rny_2025</a> (this presentation)</p>
 </div>
 
 <style>
