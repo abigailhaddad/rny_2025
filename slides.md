@@ -27,6 +27,15 @@ export:
 **Abigail Haddad**
 
 ---
+layout: center
+class: text-center
+---
+
+<div class="text-5xl font-bold">
+  ⚠️ THIS IS NOT ABOUT RAG ⚠️
+</div>
+
+---
 layout: default
 ---
 
@@ -695,6 +704,7 @@ class: text-center
   <p>🔗 <a href="https://github.com/abigailhaddad" class="text-blue-600">github.com/abigailhaddad</a></p>
   <p>📝 <a href="https://presentofcoding.substack.com" class="text-blue-600">presentofcoding.substack.com</a></p>
   <p>💻 <a href="https://github.com/abigailhaddad/rny_2025" class="text-blue-600">github.com/abigailhaddad/rny_2025</a> (this presentation)</p>
+  <p>🔧 <a href="https://github.com/abigailhaddad/generic-comment-analyzer/blob/main/comment_analyzer.py" class="text-blue-600">github.com/abigailhaddad/generic-comment-analyzer</a> (code to get started)</p>
 </div>
 
 <style>
